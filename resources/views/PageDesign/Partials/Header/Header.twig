@@ -1,6 +1,6 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
-{{ component( "Ceres::Customer.Components.UserLoginHandler" ) }}
+{{ component( "Tiervital::Customer.Components.UserLoginHandler" ) }}
 {{ component( "Ceres::PageDesign.Components.ShippingCountrySelect" ) }}
 {{ component( "Ceres::PageDesign.Components.MobileNavigation" ) }}
 {{ component( "Ceres::ItemList.Components.ItemSearch" ) }}
@@ -16,7 +16,7 @@
 {% set companyLogo  = config("Ceres.header.company_logo") %}
 {% set companyName = trans("Ceres::Template.headerCompanyName") %}
 
-<header class="top-bar">
+<header>
     <div>
         <div class="container-max">
             <div class="row">
