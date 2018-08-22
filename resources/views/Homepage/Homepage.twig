@@ -38,7 +38,10 @@
         </div>
 
     {% else %}
-          {% include 'Tiervital::Homepage.TiervitalHomepage.twig' %}        
+
+          {% block ThemeHomepage %}
+              {% include 'Tiervital::Homepage.TiervitalHomepage.twig' %}
+          {% endblock %}
 
     {% endif %}
 
