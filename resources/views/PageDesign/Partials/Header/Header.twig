@@ -50,7 +50,7 @@
                     <div id="searchBox">
                         <item-search template="#vue-item-search"></item-search>
                     </div>
-                    <div class="list-inline-item control-basket">
+                    <div id="basket">
                         <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                             {% if config("Ceres.header.basket_values") != "sum" %}
                                 <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
@@ -71,7 +71,7 @@
                 </ul>
             </div>
         </div>
-        {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
+        {% include "Tiervital::PageDesign.Partials.Header.Navigation" %}
     </div>
 </header>
 
