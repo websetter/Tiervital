@@ -14,7 +14,7 @@
             <li><a href="{{ urls.contact }}">{{ trans('Ceres::Template.contact') }}</a></li>
             <li><a href="{{ urls.gtc }}">{{ trans('Ceres::Template.checkoutGtc') }}</a></li>
             <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPayment') }}</a></li>
-            <li><a href="{{ trans("Ceres::Template.linkShippingCosts") }}">{{ trans('Ceres::Template.itemShippingCosts') }}</a></li>
+            <li><a href="{{ trans("Ceres::Template.linkShipping") }}">{{ trans('Ceres::Template.footerShipping') }}</a></li>
             <li><a href="{{ urls.privacyPolicy }}">{{ trans('Tiervital::Template.footerPrivacy') }}</a></li>
             <li><a href="{{ urls.cancellationRights }}">{{ trans('Tiervital::Template.footerCancellation') }}</a></li>
             <li><a href="{{ trans("Tiervital::Template.linkBattery") }}">{{ trans('Tiervital::Template.footerBattery') }}</a></li>
@@ -22,27 +22,31 @@
 
           </ul>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 icons">
           <h4>{{ trans('Tiervital::Template.footerColumnTitle2') }}</h4>
           <ul class="list-unstyled">
-            <li><img src="https://www.tiervitalshop.de/images/gallery/template2016/paypal.png" alt="Paypal"></li>
-            <li>{{ trans('Tiervital::Template.footerPaymentRechnung') }}</li>
-            <li>{{ trans('Tiervital::Template.footerPaymentKredit') }}</li>
-            <li>{{ trans('Tiervital::Template.footerPaymentVorkasse') }}*</li>
-            <li>{{ trans('Tiervital::Template.footerPaymentLastschrift') }}</li>
+            <li><a href="{{ trans("Tiervital::Template.linkPayment") }}"><img src="https://www.tiervitalshop.de/images/gallery/template2016/paypal.png" alt="Paypal"></a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPaymentRechnung') }}</a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPaymentKredit') }}</a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPaymentVorkasse') }}*</a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPaymentLastschrift') }}</a></li>
           </ul>
           <p><small>{{ trans('Tiervital::Template.footerPaymentSkonto') }}</small></p>
           <h4>{{ trans('Tiervital::Template.footerColumnTitle3') }}</h4>
           <ul class="list-unstyled">
-            <li><img src="https://www.tiervitalshop.de/images/gallery/template2016/dhl.png" alt="DHL"></li>
-            <li><img src="https://www.tiervitalshop.de/images/gallery/template2016/dpd.png" alt="DPD"></li>
+            <li><a href="{{ trans("Tiervital::Template.linkShipping") }}"><img src="https://www.tiervitalshop.de/images/gallery/template2016/dhl.png" alt="DHL"></a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkShipping") }}"><img src="https://www.tiervitalshop.de/images/gallery/template2016/dpd.png" alt="DPD"></a></li>
+            <li class="siegel"><a target="_blank" href="http://www.tiervitalshop.yatego.com/" title="zu Yatego"><img src="https://www.tiervitalshop.de/images/gallery/template2016/siegel_silver_2007.gif" alt="Yatego siegel"></a></li>
           </ul>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4 adress">
           <h4>{{ trans('Tiervital::Template.footerColumnTitle4') }}</h4>
           {% include "Ceres::Customer.Components.Contact.ContactCard" %}
           </div>
     </div>
+    <div class="row footerBottom">
+      <img class="tiere" src="/images/gallery/template2016/tiere-footer.png" alt="Vier Tiere">
+      <p>&copy 201 Tierivtalshop | Webentwicklung &amp; Webdesign <a title="zu www.werk38.de" target="_blank" href="https://www.werk38.de">WERK38</a></p>
   </div>
   <a href="#" title="zum Seitenanfang" class="scrollToTop" style="display: none;"><i class="fa fa-chevron-up"></i></a>
 </footer>
