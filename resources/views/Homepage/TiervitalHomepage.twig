@@ -93,6 +93,7 @@
   <div id="topProdukte">
   <div class="container-max">
     <div class="row">
+      <div class="col-xs-12 col-lg-8">
       {% set homepageContainer6 = LayoutContainer.show("Ceres::Homepage.Container6") %}
       {% if categoryList1 is not empty or homepageContainer6 | trim is not empty %}
         <div class="clearfix">
@@ -144,7 +145,7 @@
       {% endif %}
 
       {{ LayoutContainer.show("Ceres::Homepage.Container10") }}
-
+    </div>
     </div>
   </div>
 </div>
