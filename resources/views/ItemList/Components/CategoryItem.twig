@@ -49,13 +49,17 @@
                         </div>
                     </div>
                 </div>
-                <add-to-basket :item="itemData" :item-url="itemData | itemURL"></add-to-basket>
+
                 <a :href="itemData | itemURL" class="thumb-title small">
                     ${ itemData | itemName }
                 </a>
                 <p class="shortDesc">${ itemData.texts.shortDescription }</p>
             </div>
             <!-- ./ITEM DETAILS  -->
+            <div class="btn-group-basket">
+              <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
+              <a class="btn" href="{{ itemUrl }}">Details</a>
+            </div>
         </div>
     </article>
 </script>
