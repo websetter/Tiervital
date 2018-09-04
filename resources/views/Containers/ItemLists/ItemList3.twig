@@ -21,6 +21,10 @@
     {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader.twig' with { itemListId: 3, listType: listType, isHome: isHome } %}
 
     <div class="row">
-        <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
+      <div class="col-xs-12 col-lg-8">
+        <div class="row">
+          <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
+        </div>
+      </div>
     </div>
 {% endif %}
