@@ -21,8 +21,7 @@
             {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
                 <div class="col-xs-3 hidden-md-down">
                     <div class="sidebar-categories">
-                        <div class="category-title">{{ trans("Ceres::Template.itemCategories") }}</div>
-                        {{ include('Ceres::PageDesign.Partials.Header.SideNavigation.twig') }}
+                        {{ include('Tiervital::PageDesign.Partials.Header.SideNavigation.twig') }}
                     </div>
 
                     {{ LayoutContainer.show("Ceres::CategoryItem.SideNavBarBottom") }}
@@ -53,6 +52,16 @@
                                   {% else %}
                                       {{ overrideSearchFilters }}
                                   {% endif %}
+                                  {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
+                                      <div class="list-controls row">
+                                          <div class="col-xs-12">
+                                              <pagination template="#vue-pagination"></pagination>
+                                              <noscript>
+                                                  {% include "Ceres::Category.Item.Partials.Pagination" %}
+                                              </noscript>
+                                          </div>
+                                      </div>
+                                  {% endif %}
                               </div>
                           </div>
                       </div>
@@ -61,16 +70,7 @@
                   {# TAGS #}
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
-              {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
-                  <div class="list-controls row">
-                      <div class="col-xs-12">
-                          <pagination template="#vue-pagination"></pagination>
-                          <noscript>
-                              {% include "Ceres::Category.Item.Partials.Pagination" %}
-                          </noscript>
-                      </div>
-                  </div>
-              {% endif %}
+
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
 
