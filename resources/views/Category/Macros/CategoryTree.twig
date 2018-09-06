@@ -83,7 +83,7 @@
 
 {% endmacro %}
 
-{% macro get_sidemenu(breadcrumbs, categories, currentScopeUrl) %}
+{% macro get_sidemenu(breadcrumbs, categories, currentScopeUrl, level) %}
 
     {% import _self as sidemenu %}
     {% set urlNow = currentScopeUrl %}
