@@ -57,8 +57,8 @@
             </div>
             <!-- ./ITEM DETAILS  -->
             <div class="btn-group-basket">
-              <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
-              <a class="btn" href="{{ itemUrl }}">Details</a>
+              <a :href="itemData | itemURL"><i class="fa fa-search"></i></a>
+              <a class="btn" :href="itemData | itemURL">Details</a>
             </div>
         </div>
     </article>
