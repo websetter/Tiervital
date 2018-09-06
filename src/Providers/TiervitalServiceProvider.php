@@ -159,7 +159,7 @@ class TiervitalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
             {
-                $container->setTemplate('Tiervital::Item.SingleItem');
+                $container->setTemplate('Tiervital::Item.SingleItemWrapper');
                 return false;
             }, self::PRIORITY);
         }
@@ -253,4 +253,3 @@ class TiervitalServiceProvider extends ServiceProvider
         }
     }
 }
-
