@@ -93,7 +93,7 @@
         {% if currentCategory.details[0] %}
             {% if currentCategorycategory.children is not empty %}
               {{ sidemenu.get_sidemenu(breadcrumbs, currentCategory.children, urlNow) }}
-
+            {% endif %}
         {% endif %}
 
     {% endfor %}
