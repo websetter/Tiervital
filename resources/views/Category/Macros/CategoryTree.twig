@@ -54,7 +54,7 @@
 
                     <ul data-level="1" id="navDropdown{{ counter }}" class="collapse">
                         {% set counter = counter + 1 %}
-                        <img scr="{{currentCategory.details[0].image2Path}}" alt="">
+                        <img scr="{{category.details[0].image2Path}}" alt="">
                         {% if megaMenuLevels == "1" %}
                             {% for child in category.children %}
                                 {% if child.details | length > 0 %}
