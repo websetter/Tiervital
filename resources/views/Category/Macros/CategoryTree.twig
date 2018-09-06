@@ -93,10 +93,8 @@
         {% set urlNow = currentScopeUrl ~ "/" ~ CurrentCategory.details[0].nameUrl %}
 
         {% if CurrentCategory.details[0] %}
-            <ul>
-                {% if level > 1 %}
-                <li>Test</li>
-                {% endif %}
+            <ul>              
+                <li>{{level}}</li>
                 <li class="nav-item{% for breadcrumb in breadcrumbs %}{% if CurrentCategory.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs" data-category-id="{{ CurrentCategory.id }}">
                     <a href="{{ urlNow }}{{ urls.trailingSlashSuffix }}" class="nav-link" v-render-category="{ id: {{ CurrentCategory.id }}, type: '{{ CurrentCategory.type }}', alwaysOpen: true, scrollToTop: 600 }">{{ CurrentCategory.details[0].name }}</a>
                     {% if CurrentCategory.children is not empty %}
