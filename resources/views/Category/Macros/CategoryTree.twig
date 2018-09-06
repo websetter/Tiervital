@@ -90,7 +90,7 @@
 
     {% for CurrentCategory in categories %}
 
-        {% set urlNow = currentScopeUrl ~ "/" ~ category.details[0].nameUrl %}
+        {% set urlNow = currentScopeUrl ~ "/" ~ CurrentCategory.details[0].nameUrl %}
 
         {% if CurrentCategory.details[0] %}
             <ul>
