@@ -60,8 +60,10 @@
                 {{ ItemName.get(item.data | itemName, item.data.variation.bundleType) }}
             </a>
             <p class="shortDesc">{{ item.data.texts.shortDescription }}</p>
-            <p>{{ item.data.variation.number }}</p>
-            <p>{{ currentVariation.variation.number }}</p>
+            <p>{{ item.data.variation.id }}</p>
+            <p>{{ currentVariation.variation.id }}</p>
+            <p>{{ item.data.variation.itemId }}</p>
+            <p>{{ currentVariation.variation.itemId }}</p>
         <!-- ./ITEM DETAILS  -->
         <div class="btn-group-basket">
           <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
