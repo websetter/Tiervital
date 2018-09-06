@@ -60,7 +60,7 @@
                 {{ ItemName.get(item.data | itemName, item.data.variation.bundleType) }}
             </a>
             <p class="shortDesc">{{ item.data.texts.shortDescription }}</p>
-            <p>{{ item.data.variation.number }}</p>
+            <p>{{ trans("Tiervital::Template.ArtNr") }} {{ item.data.variation.number }}</p>
         <!-- ./ITEM DETAILS  -->
         <div class="btn-group-basket">
           <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
