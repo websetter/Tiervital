@@ -57,13 +57,13 @@
                         {% if megaMenuLevels == "1" %}
                             {% for child in category.children %}
                                 {% if child.details | length > 0 %}
-                                <img src="{{child.details[0].image2Path}}" alt="">
                                     <li>
                                         <a href="{{ currentScopeUrl }}/{{ child.details[0].nameUrl }}{{ urls.trailingSlashSuffix }}" v-render-category="{ id: {{ child.id }}, type: '{{ child.type }}', scrollToTop: 600 }">{{ child.details[0].name }}</a>
                                     </li>
                                 {% endif %}
                             {% endfor %}
                         {% else %}
+                        <img src="{{child.details[0].image2Path}}" alt="">
                             {{ navbar.get_children(category, currentScopeUrl, 1) }}
                         {% endif %}
                     </ul>
