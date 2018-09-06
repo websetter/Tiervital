@@ -6,12 +6,12 @@
     {% if level < megaMenuLevels %}
         {% for child in category.children if counter < maxitems[level] %}
             {% if (child.details | length > 0) %}
-            {% if (level == 1) %}            
-              <img src="/documents/{{child.details[0].image2Path}}" alt="">
-            {% endif %}
                 <li class="level{{ level }}">
                     {% set newScope = currentScopeUrl ~ "/" ~ child.details[0].nameUrl %}
                     <a href="{{ newScope }}{{ urls.trailingSlashSuffix }}" v-render-category="{ id: {{ child.id }}, type: '{{ child.type }}', scrollToTop: 600 }">{{ child.details[0].name }}</a>
+                    {% if level == 1 %}            
+                      <img src="/documents/{{child.details[0].image2Path}}" alt="">
+                    {% endif %}
                     {% if child.children %}
                         {% if level == 1 %}<ul>{% endif %}
                         {{ childlist.get_children(child, newScope, level + 1) }}
