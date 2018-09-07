@@ -19,16 +19,13 @@
 
         <div v-if="$store.state.navigation.currentCategory > 1">
 
-            <div class="categoryOverview">
-            {% if $store.state.navigation.currentCategory.level != 1 %}
-              {% set childCat = services.category.getChildren(category.id, lang) %}
+          <div class="categoryOverview">
+            {% set childCat = services.category.getChildren(category.id, lang) %}
 
-              <a v-for="child in childCat" :href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
-                  <p>{{ child.details[0].name }} </p>
-                  <img src="/documents/{{child.details[0].image2Path}}" alt="">
-                </a>
-              
-            {% endif %}
+            <a v-for="child in childCat" :href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
+                <p>{{ child.details[0].name }} </p>
+                <img src="/documents/{{child.details[0].image2Path}}" alt="">
+              </a>
           </div>
         </div>
 
