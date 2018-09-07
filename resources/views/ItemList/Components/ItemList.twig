@@ -17,15 +17,14 @@
          v-bind:class="{ 'loading': isLoading, 'is-loaded': !isLoading }">
 
          <div class="categoryOverview">
-         <div v-if="$store.state.navigation.currentCategory > 1">
-
-           <div v-for"child in childCat">
+         {% if $store.state.navigation.currentCategory > 1 %}
+         <div v-for"child in childCat">
            <a :href="{{category.details[0].nameUrl}}{{ child.details[0].nameUrl }}">
-               <p>{{ child.details[0].name }} </p>
-               <img src="/documents/{{child.details[0].image2Path}}" alt="">
-             </a>
-           </div>
+             <p>{{ child.details[0].name }} </p>
+             <img src="/documents/{{child.details[0].image2Path}}" alt="">
+           </a>
          </div>
+         {% endif %}
        </div>
 
         {% if loadingAnimationType != "blur" %}
