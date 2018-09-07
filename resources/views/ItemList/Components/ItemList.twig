@@ -11,30 +11,34 @@
 
 <script type="x/template" id="vue-item-list">
 
+  <div id="vue-rendered-item-list" class="item-list-frame{% if loadingAnimationType == " blur" %} blur-effect{% endif %}"="blur" %} blur-effect{% endif %}"" v-bind:class="{ 'loading': isLoading, 'is-loaded': !isLoading }">
 
-    <div id="vue-rendered-item-list"
-         class="item-list-frame{% if loadingAnimationType == "blur" %} blur-effect{% endif %}"
-         v-bind:class="{ 'loading': isLoading, 'is-loaded': !isLoading }">
+    <div class="categoryOverview">
+      <div v-if="$store.state.navigation.currentCategory > 1">
 
-         <div v-if="$store.state.navigation.currentCategory > 1">
-         <div class="categoryOverview">
-           <div v-for"child in childCat">
-           <a :href="{{category.details[0].nameUrl}}{{ child.details[0].nameUrl }}">
-               <p>{{ child.details[0].name }} </p>
-               <img src="/documents/{{child.details[0].image2Path}}" alt="">
-             </a>
-           </div>
-         </div>
-       </div>
-
-        {% if loadingAnimationType != "blur" %}
-            {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
-        {% endif %}
-
-        <ul class="product-list row grid">
-            <li v-for="item in items" :key="item.data.variation.id" class="col-xs-12 col-sm-6 col-md-4 col-lg-{% if (showHeaderNavBar == "side" or showHeaderNavBar == "both") and not services.template.isSearch() %}4{% else %}3{% endif %}">
-                <category-item :item-data="item.data" decimal-count="{{ decimalCount }}" image-url-accessor="urlMiddle"></category-item>
-            </li>
-        </ul>
+        <div v-for"child in childcat"="v-for"child in childCat"">
+          <a :href="{{category.details[0].nameUrl}}{{ child.details[0].nameUrl }}">
+            <p>{{ child.details[0].name }}
+            </p>
+            <img src="/documents/{{child.details[0].image2Path}}" alt="">
+          </a>
+        </div>
+      </div>
     </div>
+
+    {% if loadingAnimationType != "blur" %}
+      {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
+    {% endif %}
+
+    <ul class="product-list row grid">
+      <li
+        v-for="item in items"
+        :key="item.data.variation.id"
+        class="col-xs-12 col-sm-6 col-md-4 col-lg-{% if (showHeaderNavBar == "
+        side" or showHeaderNavBar == "
+        both") and not services.template.issearch() %}4{% else %}3{% endif %}"="both") and not services.template.isSearch() %}4{% else %}3{% endif %}"">
+        <category-item :item-data="item.data" decimal-count="{{ decimalCount }}" image-url-accessor="urlMiddle"></category-item>
+      </li>
+    </ul>
+  </div>
 </script>
