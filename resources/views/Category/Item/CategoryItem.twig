@@ -66,10 +66,12 @@
                   {# TAGS #}
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
-
+              <hr>
+              <p>{{ category.level }}</p>
               <div v-if="$store.state.navigation.currentCategory">
-                <p>{{ currentCategory.level }}</p>
+                <p>{{ category.level }}</p>
               </div>
+              <hr>
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
 
