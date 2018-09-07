@@ -69,13 +69,18 @@
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
                   {% if category.level != 1 and category.children %}
+                  <p>{{category.level}}</p>
                     {% for child in category.children %}
-                        {% if child.details | length > 0 %}
                             <p>{{ child.details[0].name }}  </p>
-                        {% endif %}
-                    {% endfor %}                    
+                    {% endfor %}
                   {% endif %}
-
+                  <hr>
+                  {% if category.level != 1 %}
+                  <p>{{category.level}}</p>
+                    {% for child in category.children %}
+                            <p>{{ child.details[0].name }}  </p>
+                    {% endfor %}
+                  {% endif %}
                     {% if ceresConfig.item.loadingAnimationType != "blur" %}
                         {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
                     {% endif %}
