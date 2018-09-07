@@ -68,17 +68,12 @@
               </div>
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
-                  {% if category.level != 1 and category.children %}
-                  <p>{{category.level}}</p>
-                    {% for child in category.children %}
-                            <p>{{ child.details[0].name }}  </p>
-                    {% endfor %}
-                  {% endif %}
-                  <hr>
                   {% if category.level != 1 %}
-                  <p>{{category.level}}</p>
-                    {% for child in category.children %}
-                            <p>{{ child.details[0].name }}  </p>
+                    <p>{{category.level}}</p>
+                    {% set childCat = services.category.getChildren(category.id, lang) %}
+                    {% for child in childCat %}
+                        <p>{{ child.details[0].name }}  </p>
+                        <p>test</p>
                     {% endfor %}
                   {% endif %}
                     {% if ceresConfig.item.loadingAnimationType != "blur" %}
