@@ -73,9 +73,7 @@
                     {% for child in childCat %}
                     <a href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
                         <p>{{ child.details[0].name }} </p>
-                        {% if child.details[0].image2Path != '') %}
-                          <img src="/documents/{{child.details[0].image2Path}}" alt="">
-                        {% endif %}
+                        <img src="/documents/{{child.details[0].image2Path}}" alt="">                        
                       </a>
                     {% endfor %}
                   {% endif %}
