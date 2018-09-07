@@ -9,9 +9,6 @@
 {{ component( "Ceres::ItemList.Components.ItemStoreSpecial" ) }}
 
 <script type="x/template" id="vue-item-list">
-    <div v-if="$store.state.navigation.currentCategory">
-    ${ $store.state.navigation.currentCategory.level }
-    </div>
     <div id="vue-rendered-item-list"
          class="item-list-frame{% if loadingAnimationType == "blur" %} blur-effect{% endif %}"
          v-bind:class="{ 'loading': isLoading, 'is-loaded': !isLoading }">
@@ -19,6 +16,10 @@
         {% if loadingAnimationType != "blur" %}
             {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
         {% endif %}
+
+        <div v-if="$store.state.navigation.currentCategory">
+        ${ $store.state.navigation.currentCategory.level }
+        </div>
 
         <ul class="product-list row grid">
             <li v-for="item in items" :key="item.data.variation.id" class="col-xs-12 col-sm-6 col-md-4 col-lg-{% if (showHeaderNavBar == "side" or showHeaderNavBar == "both") and not services.template.isSearch() %}4{% else %}3{% endif %}">
