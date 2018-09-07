@@ -24,11 +24,9 @@
 
           <div class="categoryOverview">
             <div v-for="child in childCat">
-            {% set link =  category.details[0].nameUr ~  "/" ~  child.details[0].nameUrl  %}
-            <a :href="{{link}}">
+
                 <p>{{ child.details[0].name }} </p>
-                <img src="/documents/{{child.details[0].image2Path}}" alt="">
-            </a>
+                <img src="/documents/{{child.details[0].image2Path}}" alt="">            
               </div>
           </div>
         </div>
