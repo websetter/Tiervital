@@ -9,6 +9,9 @@
 {{ component( "Ceres::ItemList.Components.ItemStoreSpecial" ) }}
 
 <script type="x/template" id="vue-item-list">
+    <div v-if="$store.state.navigation.currentCategory">
+      ${ $store.state.navigation.currentCategory.level }
+    </div>
     <div id="vue-rendered-item-list"
          class="item-list-frame{% if loadingAnimationType == "blur" %} blur-effect{% endif %}"
          v-bind:class="{ 'loading': isLoading, 'is-loaded': !isLoading }">
