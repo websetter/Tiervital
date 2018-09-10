@@ -79,10 +79,15 @@
                   {# TAGS #}
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
+{% if category.level > 4 %}
+</div>
+<div class="col-xs-12">
+  <h2>Unsere Top Produkte</h2>
+{% endif %}
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
                   <div class="categoryOverview row">
-                  {% if category.level != 1 %}
+                  {% if category.level != 1 and category.level > 4 %}
                     <ul>
                       {% set childCat = services.category.getChildren(category.id, lang) %}
                       {% for child in childCat %}
