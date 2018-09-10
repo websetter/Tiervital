@@ -23,6 +23,8 @@
 {% elseif category.level == 3 %}
     {% set firstLvLCat = category.level[1].id %}
 {% endif %}
+<p>{{ category | json_encode }}</p>
+<p>{{ category | json_encode() }}</p>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} levelOneCat-{{firstLvLCat}}">
         <div class="row">
