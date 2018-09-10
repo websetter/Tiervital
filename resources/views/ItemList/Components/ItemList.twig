@@ -18,9 +18,9 @@
         {% endif %}
 
         <div v-if="$store.state.navigation.currentCategory">
-          {% if ${ $store.state.navigation.currentCategory.level } != 1 %}
+          <div v-if="$store.state.navigation.currentCategory.level != 1">
             <p>test</p>
-          {% endif %}
+          </div>
         </div>
 
         <ul class="product-list row grid">
