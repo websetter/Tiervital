@@ -18,12 +18,14 @@
 
 
     {% set categoryKind = category.details[0].shortDescription %}
-    {% set itemStart = 1 %}
-    {% set itemLimit = 9 %}
+
 
 
 
 <p>{{ category | json_encode }}</p>
+<hr>
+<p>{{ itemList | json_encode }}</p>
+<hr>
 <div class="category-bg">
 	<img src="/images/gallery/template2016/kategorien/{{categoryKind}}-1.jpg" alt="Hunde">
 </div>
@@ -108,11 +110,10 @@
 
                     <ul class="product-list row grid" v-is-loading-watcher="$store.state.itemList.isLoading">
 
-                        {% for item in itemList and itemStart < itemLimit %}
+                        {% for item in itemList %}
                             <li class="col-xs-12 col-sm-6 col-md-4 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}4{% else %}3{% endif %}">
                                 {% include "Tiervital::Category.Item.Partials.CategoryListItem" with { 'item': item, 'shippingCat': shippingCat, 'items': 9 } %}
                             </li>
-                            {% set itemStart = itemStart + 1 %}
                         {% endfor %}
                     </ul>
                 </div>
