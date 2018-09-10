@@ -21,8 +21,7 @@
 {% elseif category.level == 2 %}
   {% set firstLvLCat = category.parentCategoryId %}
 {% elseif category.level == 3 %}
-    {% set secondLvLCat = category.parentCategoryId %}
-    {% set firstLvLCat = secondLvLCat.parentCategoryId %}
+    {% set firstLvLCat = category.level[1].id %}
 {% endif %}
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} levelOneCat-{{firstLvLCat}}">
