@@ -78,7 +78,10 @@
                       <li class=" col-md-4 col-sm-6 col-xs-12">
                       <a href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
                           <p>{{ child.details[0].name }} </p>
-                          <img src="/documents/{{child.details[0].image2Path}}" alt="">
+                            {% if child.details[0].image2Path is not empty %}
+                            <img src="/documents/{{child.details[0].image2Path}}" alt="">
+                          {% endif %}
+
                         </a>
                       </li>
                       {% endfor %}
