@@ -16,7 +16,7 @@
 
     {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 
-    <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}}">
+    <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} levelOneCat-{% if category.level == 1 %}{{category.id}}{% elseif category.level == 2 %}{{category.parentCategoryId}}{% else %}{{category.parentCategoryId.parentCategoryId}}{% endif %}">
         <div class="row">
             {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
                 <div class="col-xs-3 hidden-md-down">
