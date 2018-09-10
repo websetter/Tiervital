@@ -18,8 +18,8 @@
             {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
         {% endif %}
 
-        <div v-if="$store.state.navigation.currentCategory">
-                  <div v-if="$store.state.navigation.currentCategory.level != 1">
+        /*<div v-if="$store.state.navigation.currentCategory">
+          <div v-if="$store.state.navigation.currentCategory.level != 1">
             {% set childCat = services.category.getChildren($store.state.navigation.currentCategory.id, lang) %}
             <div v-for="child in childCat">
               <span>
@@ -28,7 +28,7 @@
               </span>
             </div>
           </div>
-        </div>
+        </div>*/
 
         <ul class="product-list row grid">
             <li v-for="item in items" :key="item.data.variation.id" class="col-xs-12 col-sm-6 col-md-4 col-lg-{% if (showHeaderNavBar == "side" or showHeaderNavBar == "both") and not services.template.isSearch() %}4{% else %}3{% endif %}">
