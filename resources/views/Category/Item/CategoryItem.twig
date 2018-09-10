@@ -79,6 +79,26 @@
                   {# TAGS #}
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
+              <div class="categoryOverview row">
+              {% if category.level == 2 or category.level == 3 %}
+                <ul>
+                  {% set childCat = services.category.getChildren(category.id, lang) %}
+                  {% for child in childCat %}
+                  <li class=" col-md-4 col-sm-6 col-xs-12">
+                  <a href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
+                      <p>{{ child.details[0].name }} </p>
+                        {% if child.details[0].image2Path is not empty %}
+                        <img src="/documents/{{child.details[0].image2Path}}" alt="">
+                          {% else %}
+                          <img src="/images/gallery/template2016/kat-default.jpg" alt="Kein Bild vorhanden">
+                        {% endif %}
+
+                    </a>
+                  </li>
+                  {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
   {% if category.level == 2 or category.level == 3 %}
 </div>
 <div class="col-xs-12">
@@ -86,26 +106,7 @@
 {% endif %}
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
-                  <div class="categoryOverview row">
-                  {% if category.level == 2 or category.level == 3 %}
-                    <ul>
-                      {% set childCat = services.category.getChildren(category.id, lang) %}
-                      {% for child in childCat %}
-                      <li class=" col-md-4 col-sm-6 col-xs-12">
-                      <a href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
-                          <p>{{ child.details[0].name }} </p>
-                            {% if child.details[0].image2Path is not empty %}
-                            <img src="/documents/{{child.details[0].image2Path}}" alt="">
-                              {% else %}
-                              <img src="/images/gallery/template2016/kat-default.jpg" alt="Kein Bild vorhanden">
-                            {% endif %}
 
-                        </a>
-                      </li>
-                      {% endfor %}
-                  </ul>
-                  {% endif %}
-                </div>
                     {% if ceresConfig.item.loadingAnimationType != "blur" %}
                         {% include "Ceres::ItemList.Partials.LoadingAnimation" %}
                     {% endif %}
