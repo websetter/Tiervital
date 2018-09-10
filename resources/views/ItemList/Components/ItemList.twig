@@ -19,8 +19,9 @@
         {% endif %}
 
         <div v-if="$store.state.navigation.currentCategory">
-          <div v-if="$store.state.navigation.currentCategory.level != 1">
-            <div v-for="child in $store.state.navigation.currentCategory.getChildren(currentCategory.id, lang)">
+                  <div v-if="$store.state.navigation.currentCategory.level != 1">
+            {% set childCat = services.category.getChildren($store.state.navigation.currentCategory.id, lang) %}
+            <div v-for="child in childCat">
               <span>
                 <p>{{ child.details[0].name }} </p>
                 <img src="/documents/{{child.details[0].image2Path}}" alt="">
