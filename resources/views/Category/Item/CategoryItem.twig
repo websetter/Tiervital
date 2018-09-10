@@ -23,7 +23,9 @@
 
 
 <!--<p>{{ category | json_encode }}</p>-->
-
+<div class="category-bg">
+	<img src="/images/gallery/template2016/kategorien/{{categoryKind}}-1.jpg" alt="Hunde">
+</div>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} {{categoryKind}}">
         <div class="row">
@@ -129,7 +131,9 @@
             </div>
         {% endif %}
     </div>
-
+    <div class="category-bg-down">
+    	<img alt="hunde" src="/images/gallery/template2016/kategorien/{{categoryKind}}-2.jpg">
+    </div>
 {% endblock %}
 
 {% block PartialHead %}
