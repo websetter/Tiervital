@@ -80,7 +80,9 @@
                           <p>{{ child.details[0].name }} </p>
                             {% if child.details[0].image2Path is not empty %}
                             <img src="/documents/{{child.details[0].image2Path}}" alt="">
-                          {% endif %}
+                              {% else %}
+                              <img src="/images/gallery/template2016/kat-default.jpg" alt="Kein Bild vorhanden">
+                            {% endif %}
 
                         </a>
                       </li>
