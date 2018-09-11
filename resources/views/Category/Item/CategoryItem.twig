@@ -92,7 +92,6 @@
                           {% else %}
                           <img src="/images/gallery/template2016/kat-default.jpg" alt="Kein Bild vorhanden">
                         {% endif %}
-
                     </a>
                   </li>
                   {% endfor %}
@@ -102,7 +101,7 @@
   {% if category.level == 2 or category.level == 3 %}
 </div>
 <div class="col-xs-12">
-  <h2>Unsere Top Produkte</h2>
+  <h2 class="topArt">Top-Produkte aus dem Bereich {{  category.details[0].name }}</h2>
 {% endif %}
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
