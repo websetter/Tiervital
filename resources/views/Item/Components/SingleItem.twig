@@ -19,7 +19,7 @@
               <span>{{ trans("Tiervital::Template.ArtNr") }}</span>
               <span>${ currentVariation.variation.number }</span>
             </p>
-            <p v-if="currentVariation.variation.availability" :class="'availability">
+            <p v-if="currentVariation.variation.availability" :class="availability">
               <span>{{ trans("Tiervital::Template.Lieferzeit") }}:
               </span>
               <span>
