@@ -21,6 +21,7 @@
         <div class="singleItemInfo col-xs-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
           <div class="row">
 
+          <div id="singItemArticle">
             <!-- ITEM IMG -->
             <div class="col-md-5 single-leftside">
               <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
@@ -86,6 +87,7 @@
               <slot name="AfterAddToBasket"></slot>
             </div>
             <!-- ./ITEM DETAIL -->
+            </div>
           </div>
           <div class="col-xs-12 lieferHinweis">
             <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans(" tiervital::template.linkShipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
