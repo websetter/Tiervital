@@ -5,7 +5,8 @@
 <script type="x/template" id="vue-single-item">
   <div>
     <div class="single container-max page-content">
-    <p>${ item | json_encode}</p>
+    <p>${ currentVariation | json_encode }</p>
+    <p>${ currentVariation | json_encode() }</p>
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
           <div class="col-xs-3 hidden-md-down">
@@ -63,7 +64,7 @@
                   {% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}
                   {% endif %}
                   {{ trans("Ceres::Template.singleItemExclusive") }}
-                  <a href="{{ trans(" tiervital::template.linkshipping") }}" target="_blank" title="{{ trans(" ceres::template.singleitemshippingcosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+                  <a href="{{ trans(" tiervital::template.linkShipping") }}" target="_blank" title="{{ trans(" ceres::template.singleitemshippingcosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
                 </span>
               </div>
               <div id="prices-right">
@@ -85,7 +86,7 @@
             <!-- ./ITEM DETAIL -->
           </div>
           <div class="col-xs-12 lieferHinweis">
-            <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans(" tiervital::template.linkshipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
+            <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans(" tiervital::template.linkShipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
           </div>
           <!-- ITEM DESCRIPTION -->
           <div class="col-xs-12">
