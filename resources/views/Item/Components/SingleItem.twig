@@ -6,7 +6,7 @@
 
 <script type="x/template" id="vue-single-item">
   <div>
-    <div class="single container-max page-content {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].name }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
+    <div class="single container-max page-content {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
 
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
