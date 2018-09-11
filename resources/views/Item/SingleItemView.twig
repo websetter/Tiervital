@@ -9,6 +9,7 @@
 {{ component( "Ceres::Item.Components.GraduatedPrices" ) }}
 {{ component( "Tiervital::Basket.Components.AddToBasket" ) }}
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
+{{ component("Ceres::Category.Components.CategoryBreadcrumbs") }}
 
 <single-item v-cloak template="#vue-single-item" :item-data="{{ item | json_encode }}" :variation-list-data="{{ variations | json_encode }}" :attribute-name-map="{{attributeNameMap | json_encode}}">
     <div slot="BeforePrice">{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</div>

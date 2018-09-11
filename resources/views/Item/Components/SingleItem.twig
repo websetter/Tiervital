@@ -8,6 +8,16 @@
   <div>
     <div class="single container-max page-content">
 
+    {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}
+        {% if category.details[0] %}
+            <li class="breadcrumb-item">
+                <a href="{{ services.category.getURLById( category.id ) }}" v-render-category="{ id: {{ category.id }}, type: '{{ category.type }}', alwaysOpen: true }">{{ category.details[0].name }}</a>
+            </li>
+        {% else %}
+            {% set break = true %}
+        {% endif %}
+    {% endfor %}
+
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
           <div class="col-xs-3 hidden-md-down">
