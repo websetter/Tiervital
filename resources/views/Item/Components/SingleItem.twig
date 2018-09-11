@@ -1,13 +1,11 @@
 {% set itemData = config("Ceres.item.data") | split(', ') %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
-{% set categoryKind = category.details[0].shortDescription %}
 
 <script type="x/template" id="vue-single-item">
   <div>
     <div class="single container-max page-content">
-    <p>${ categoryKind }</p>
-    <p>{{categoryKind }}</p>
+    <p>${ itemData.category }</p>
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
           <div class="col-xs-3 hidden-md-down">
