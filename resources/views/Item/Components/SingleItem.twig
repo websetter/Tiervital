@@ -16,7 +16,7 @@
           </div>
         {% endif %}
 
-        <div class="singleItemInfo col-xs-12 col-lg-{% if ceresConfig.header.showNavBars == " side" or ceresConfig.header.showNavBars == " both" %}9{% else %}12{% endif %}">
+        <div class="singleItemInfo col-xs-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
           <div class="row">
             <!-- ITEM IMG -->
             <div class="col-md-5 single-leftside">
@@ -32,11 +32,9 @@
                   <span>{{ trans("Tiervital::Template.ArtNr") }}</span>
                   <span>${ currentVariation.variation.number }</span>
                 </p>
-                <p v-if="currentVariation.variation.availability" :class="availability">
-                  <span>{{ trans("Tiervital::Template.Lieferzeit") }}:
-                  </span>
-                  <span>
-                    ${ currentVariation.variation.availability.names.name } *</span>
+                <p v-if="currentVariation.variation.availability" class="availability">
+                  <span>{{ trans("Tiervital::Template.Lieferzeit") }}:</span>
+                  <span>${ currentVariation.variation.availability.names.name } *</span>
                 </p>
               </div>
               <hr>
@@ -65,7 +63,7 @@
                   {% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}
                   {% endif %}
                   {{ trans("Ceres::Template.singleItemExclusive") }}
-                  <a href="{{ trans(" tiervital::template.linkshipping") }}"="Tiervital::Template.linkShipping") }}"" target="_blank" title="{{ trans(" ceres::template.singleitemshippingcosts") }}"="ceres::template.singleitemshippingcosts") }}"">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+                  <a href="{{ trans(" tiervital::template.linkshipping") }}" target="_blank" title="{{ trans(" ceres::template.singleitemshippingcosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
                 </span>
               </div>
               <div id="prices-right">
@@ -87,8 +85,7 @@
             <!-- ./ITEM DETAIL -->
           </div>
           <div class="col-xs-12 lieferHinweis">
-            <p>{{ trans("Tiervital::Template.LieferHinweis1") }}
-              <a href="{{ trans(" tiervital::template.linkshipping") }}"="Tiervital::Template.linkShipping") }}"">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
+            <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans(" tiervital::template.linkshipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
           </div>
           <!-- ITEM DESCRIPTION -->
           <div class="col-xs-12">
