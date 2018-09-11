@@ -6,12 +6,13 @@
   <div>
     <div class="single container page-content">
       <div class="row">
-        <div class="col-md-7 single-leftside">
+      <div class="singleItemInfo">
+        <div class="col-md-5 single-leftside">
             <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
         </div>
 
         <!-- ITEM DETAIL -->
-        <div class="col-md-5 single-rightside">
+        <div class="col-md-7 single-rightside">
           <h1>${ currentVariation | itemName }
           </h1>
           <div class="detail">
@@ -58,7 +59,7 @@
           <div id="prices-right">
             <div class="base-price" v-if="currentVariation.unit && !(currentVariation.unit.unitOfMeasurement === 'C62' && currentVariation.unit.content === 1)">
               <div v-if="currentVariation.variation.mayShowUnitPrice">
-                {{ trans("Ceres::Template.singleItemUnitPrice") }}
+                <span>{{ trans("Ceres::Template.singleItemUnitPrice") }}:</span><br/>
                 <span class="base-price-value">
                   ${ variationGraduatedPrice.basePrice }
                 </span>
@@ -73,13 +74,14 @@
 
           <!-- ./ITEM DETAIL -->
         </div>
+        </div>
         <div class="col-xs-12 lieferHinweis">
         <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans("Tiervital::Template.linkShipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
         </div>
         <!-- ITEM DESCRIPTION -->
         <div class="col-xs-12">
           <div id="itemDesc">
-            <h2>{{ trans("Ceres::Template.itemDescriptionTitle") }}</h2>
+            <h2>{{ trans("Tiervital::Template.itemDescriptionTitle") }}</h2>
             <div v-html="currentVariation.texts.description"></div>
           </div>
         </div>
