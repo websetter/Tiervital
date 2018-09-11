@@ -3,9 +3,11 @@
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 
 
-
 <script type="x/template" id="vue-single-item">
   <div>
+  <div class="category-bg">
+  	<img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
+  </div>
     <div class="single container-max page-content {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
 
       <div class="row">
@@ -88,6 +90,7 @@
             <!-- ./ITEM DETAIL -->
           </div>
           </div>
+          <div class="row">
           <div class="col-xs-12 lieferHinweis">
             <p>{{ trans("Tiervital::Template.LieferHinweis1") }}<a href="{{ trans(" tiervital::template.linkShipping") }}">{{ trans("Tiervital::Template.LieferHinweis2") }}</a>.</p>
           </div>
@@ -99,11 +102,15 @@
             </div>
           </div>
           <!-- ./ITEM DESCRIPTION -->
+          </div>
         </div>
       </div>
 
 
       <slot name="ItemListContainer"></slot>
+    </div>
+    <div class="category-bg-down">
+      <img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-2.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
     </div>
   </div>
 </script>
