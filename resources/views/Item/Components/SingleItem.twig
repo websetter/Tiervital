@@ -1,12 +1,13 @@
 {% set itemData = config("Ceres.item.data") | split(', ') %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
+{% set categoryKind = category.details[0].shortDescription %}
 
 <script type="x/template" id="vue-single-item">
   <div>
     <div class="single container-max page-content">
-    <p>${ currentVariation | json_encode }</p>
-    <p>${ currentVariation | json_encode() }</p>
+    <p>${ categoryKind }</p>
+    <p>{{categoryKind }}</p>
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
           <div class="col-xs-3 hidden-md-down">
@@ -19,6 +20,7 @@
 
         <div class="singleItemInfo col-xs-12 col-lg-{% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}9{% else %}12{% endif %}">
           <div class="row">
+
             <!-- ITEM IMG -->
             <div class="col-md-5 single-leftside">
               <item-image-carousel image-url-accessor="url" template="#vue-item-image-carousel"></item-image-carousel>
