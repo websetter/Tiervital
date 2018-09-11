@@ -24,7 +24,7 @@
 
 <p>{{ category.itemCount }}</p>
 <div class="category-bg">
-	<img src="/images/gallery/template2016/kategorien/{{categoryKind}}-1.jpg" alt="Hunde">
+	<img src="/images/gallery/template2016/kategorien/{{categoryKind}}-1.jpg" alt="{{categoryKind}}">
 </div>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} {{categoryKind}}">
@@ -138,7 +138,7 @@
         {% endif %}
     </div>
     <div class="category-bg-down">
-    	<img alt="hunde" src="/images/gallery/template2016/kategorien/{{categoryKind}}-2.jpg">
+    	<img alt="{{categoryKind}}" src="/images/gallery/template2016/kategorien/{{categoryKind}}-2.jpg">
     </div>
 {% endblock %}
 
