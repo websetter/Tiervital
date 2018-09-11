@@ -10,7 +10,7 @@
     {% set enableCarousel = ceresConfig.item.enableImageCarousel %}
 {% endif %}
 
-<article class="cmp cmp-product-thumb cmp-product-thumb--grid">
+<article class="cmp cmp-product-thumb cmp-product-thumb--grid fromCategory">
     <div class="thumb-inner">
         <div class="thumb-background"></div>
 
@@ -62,9 +62,11 @@
             <p class="shortDesc">{{ item.data.texts.shortDescription }}</p>
             <p>{{ trans("Tiervital::Template.ArtNr") }} {{ item.data.variation.number }}</p>
         <!-- ./ITEM DETAILS  -->
-        <div class="btn-group-basket">
-          <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
-          <a class="btn" href="{{ itemUrl }}">Details</a>
-        </div>
+
     </div>
+    <div class="btn-group-basket">
+      <a href="{{ itemUrl }}"><i class="fa fa-search"></i></a>
+      <a class="btn" href="{{ itemUrl }}">Details</a>
+    </div>
+  </div>
 </article>
