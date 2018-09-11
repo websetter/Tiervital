@@ -2,10 +2,12 @@
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 {% set shippingCat = config("Ceres.global.shippingCostsCategoryId") %}
 
+{% set category1 = services.category.get(config(category.id, lang) %}
+
 <script type="x/template" id="vue-single-item">
   <div>
     <div class="single container-max page-content">
-    <p>${ itemData.category }</p>
+    <p>${ category1 }</p>
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
           <div class="col-xs-3 hidden-md-down">
