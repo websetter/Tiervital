@@ -1,5 +1,5 @@
 {{ component( "Tiervital::Containers.Components.ContainerItemList2" ) }}
-{{ component( "Tiervital::ItemList.Components.CategoryItem" ) }}
+{{ component( "Tiervital::ItemList.Components.CategoryItemForList2" ) }}
 
 {% set listType = config("Ceres.item.lists.2.list_type") %}
 {% set tagIds = config("Ceres.item.lists.2.tag_ids") | split(",") %}
@@ -15,7 +15,5 @@
 {% endif %}
 
 {% if itemList is not empty %}
-  <div class="carousel-inner">
     <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
-  </div>
 {% endif %}
