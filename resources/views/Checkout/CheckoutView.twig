@@ -9,7 +9,7 @@
 {% block PageBody %}
 
     {{ component( "Ceres::Customer.Components.AddressSelect.AddressSelect" ) }}
-    {{ component( "Ceres::Checkout.Components.AcceptGtcCheck" ) }}
+    {{ component( "Tiervital::Checkout.Components.AcceptGtcCheck" ) }}
     {{ component( "Ceres::Checkout.Components.PaymentProviderSelect" ) }}
     {{ component( "Ceres::Checkout.Components.ShippingPrivacyHintCheck" ) }}
     {{ component( "Ceres::Checkout.Components.ShippingProfileSelect" ) }}
@@ -106,12 +106,6 @@
                                 {% else %}
                                     {{ overridePaymentList }}
                                 {% endif %}
-
-                                <header>
-                                    <h3>{{ trans("Ceres::Template.checkoutContactWish") }}</h3>
-                                </header>
-
-                                <contact-wish-input class="p-b-1" template="#vue-contact-wish-input"></contact-wish-input>
 
                                 <shipping-privacy-hint-check></shipping-privacy-hint-check>
 
