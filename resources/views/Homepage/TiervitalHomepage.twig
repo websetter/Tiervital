@@ -23,7 +23,7 @@
     'sorting': itemSort
   }) %}
 
-  {% set paginatedCategoryList2 = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.categoryList, {
+  {% set paginatedCategoryList2 = services.itemLoader.loadForTemplate('Tiervital::ItemList.ItemListView', itemLoaderPresets.categoryList, {
     'categoryId': category6.id,
     'page': 1,
     'items': 3,
@@ -33,7 +33,7 @@
   {% set categoryList1 = paginatedCategoryList1.documents %}
   {% set categoryList2 = paginatedCategoryList2.documents %}
 
-  {{ component( "Ceres::ItemList.Components.ItemList") }}
+  {{ component( "Tiervital::ItemList.Components.ItemList") }}
   {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
   {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
