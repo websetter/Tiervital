@@ -115,7 +115,7 @@ class TiervitalServiceProvider extends ServiceProvider
 
             $dispatcher->listen('IO.tpl.checkout', function (TemplateContainer $container)
             {
-                $container->setTemplate('Tiervital::Checkout.Checkout');
+                $container->setTemplate('Tiervital::Checkout.CheckoutView');
                 return false;
             }, self::PRIORITY);
         }
