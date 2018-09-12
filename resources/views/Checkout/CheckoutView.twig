@@ -109,10 +109,7 @@
 
                                 <shipping-privacy-hint-check></shipping-privacy-hint-check>
 
-                                <div class="form-check">
-                                    <accept-gtc-check template="#vue-accept-gtc-check"></accept-gtc-check>
-                                </div>
-                                {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
+
                             </div>
                         </div>
                     </div>
@@ -146,6 +143,13 @@
                                     {{ LayoutContainer.show("Ceres::Checkout.AfterBasketTotals") }}
                                 </div>
                             </aside>
+                        </div>
+
+                        <div class="bg-white">
+                          <div class="form-check">
+                              <accept-gtc-check template="#vue-accept-gtc-check"></accept-gtc-check>
+                          </div>
+                          {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
                         </div>
 
                         <div class="bg-white">
