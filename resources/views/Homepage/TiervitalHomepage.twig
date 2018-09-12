@@ -37,20 +37,28 @@
   {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
   {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
+
   <div id="Slider">
     <div class="container-max">
       <div class="row">
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              {% for item in categoryList1 %}
-                <div class="carousel-item">
-                  {% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-                    'item' : item
-                  } %}
-                </div>
-              {% endfor %}
-            </div>
+            {% set homepageContainer9 = LayoutContainer.show("Ceres::Homepage.Container9") %}
+            {% if categoryList2 is not empty or homepageContainer9 | trim is not empty %}
+              <div class="carousel-inner">
+                {% if homepageContainer9 | trim is empty %}
+                    {% for item in categoryList2 %}
+                      <div class="carousel-items">
+                        {% include "Ceres::Category.Item.Partials.CategoryListItem" with {
+                          'item' : item
+                        } %}
+                      </div>
+                    {% endfor %}
+                {% else %}
+                  {{ homepageContainer9 }}
+                {% endif %}
+              </div>
+            {% endif %}
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
               <span class="fa fa-angle-left" aria-hidden="true"></span>
               <span class="sr-only">Zurück</span>
@@ -118,32 +126,6 @@
           {% endif %}
         </div>
       {% endif %}
-      {% set homepageContainer9 = LayoutContainer.show("Ceres::Homepage.Container9") %}
-      {% if categoryList2 is not empty or homepageContainer9 | trim is not empty %}
-        <div class="m-b-2 clearfix">
-          {% if homepageContainer9 | trim is empty %}
-            <div class="section-header m-b-1">
-              <h2>{{ category6.details[0].name }}</h2>
-              <a href="{{ services.category.getURL(category6, lang) }}" class="section-link-all">
-                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                {{ trans("Ceres::Template.homepageShowAll") }}</a>
-            </div>
-            <!-- crosssell start -->
-            <ul class="product-list row grid">
-              {% for item in categoryList2 %}
-                <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                  {% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-                    'item' : item
-                  } %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            {{ homepageContainer9 }}
-          {% endif %}
-        </div>
-      {% endif %}
-
       {{ LayoutContainer.show("Ceres::Homepage.Container10") }}
     </div>
     </div>
