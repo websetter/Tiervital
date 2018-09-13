@@ -77,7 +77,7 @@
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
               <div class="categoryOverview row">
-              {% if category.level > 4 %}
+              {% if category.level < 4 %}
                 <ul>
                   {% set childCat = services.category.getChildren(category.id, lang) %}
                   {% for child in childCat %}
