@@ -45,14 +45,12 @@
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
             {% set carouItems = services.itemLoader.loadForTemplate('Tiervital::ItemList.ItemListView',itemLoaderPresets.tagList,{'tagIds': 2, 'items':3 }) %}
-            {% if carouItems is not empty %}
-                    <item-list
-                    :item-data="{{ carouItems | json_encode }}"
-                      template="#vue-item-list">
-                  </item-list>
-            {% else %}
-                      <p>leer</p>
-                {% endif %}
+            {% set SliderList1 = carouItems.documents %}
+            {% for item in SliderList1 %}
+                <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    {% include "Ceres::Category.Item.Partials.CategoryListItem" with { 'item': item } %}
+                </li>
+            {% endfor %}
 
           </div>
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
