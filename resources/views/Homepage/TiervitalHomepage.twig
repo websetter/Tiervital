@@ -44,7 +44,11 @@
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
             {% set items = services.itemList.getItemList('tag_list', 2, null, 3) %}
-            {% include category_template( category.id, lang, webstoreConfig.webstoreId ) with { items: items } %}
+            {% for item in items %}
+            <li class=" col-md-4 col-sm-6 col-xs-12">
+                <p>{{ item.details[0].name }} </p>                
+            </li>
+            {% endfor %}
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
               <span class="fa fa-angle-left" aria-hidden="true"></span>
               <span class="sr-only">Zurück</span>
