@@ -1,6 +1,5 @@
 {{ component( "Tiervital::Containers.Components.ContainerItemList2" ) }}
 {{ component( "Tiervital::ItemList.Components.CategoryItem" ) }}
-{{ component( "Ceres::Containers.Components.LastSeenItemList" ) }}
 
 {% set listType = config("Tiervital.item.lists." ~ itemListNo ~ ".list_type") %}
 {% set tagIds = config("Tiervital.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
@@ -13,7 +12,7 @@
     {% set itemList = services.itemList.getItemList( listType, tagIds ).documents %}
 {% endif %}
 
-  
+
 {% if itemList is not empty %}
   {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
     <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
