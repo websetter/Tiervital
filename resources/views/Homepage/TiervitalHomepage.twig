@@ -44,13 +44,16 @@
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              	{% set carouItems = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.tagList, {'tagIds': 2}).documents %}
-            {% set slideitems = services.itemList.getItemList('tag_list', 2, null, 3) %}
-            {% for slideitem in carouItems %}
-                <div class="carousel-item">
-                    {% include "Tiervital::Category.Item.Partials.CategoryListItem" with { 'item': slideitem, 'shippingCat': shippingCat, 'items': 3 } %}
-                </div>
-            {% endfor %}
+            {% set carouItems = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.tagList, {'tagId': 2}).documents %}
+            {% if carouItems is not empty %}
+                    <item-list
+                    :item-data="{{ carouItems | json_encode }}"
+                      template="#vue-item-list">
+                  </item-list>
+            {% else %}
+                      <p>leer</p>
+                {% endif %}
+
           </div>
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
               <span class="fa fa-angle-left" aria-hidden="true"></span>
