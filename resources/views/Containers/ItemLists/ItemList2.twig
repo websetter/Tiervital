@@ -1,8 +1,8 @@
 {{ component( "Tiervital::Containers.Components.ContainerItemList2" ) }}
 {{ component( "Tiervital::ItemList.Components.CategoryItem" ) }}
 
-{% set listType = config("Tiervital.item.lists." ~ itemListNo ~ ".list_type") %}
-{% set tagIds = config("Tiervital.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
+{% set listType = config("Tiervital.item.lists.2 .list_type") %}
+{% set tagIds = config("Tiervital.item.lists.2 .tag_ids") | split(",") %}
 {% set tagSorting = config("Tiervital.item.lists.tag_sorting") %}
 {% set isHome = services.template.isHome() %}
 
@@ -14,6 +14,6 @@
 
 
 {% if itemList is not empty %}
-  {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+  {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: 2, listType: listType, isHome: isHome } %}
     <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
 {% endif %}
