@@ -44,12 +44,7 @@
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              {% set carouItems = services.itemLoader.loadForTemplate('Tiervital::ItemList.ItemListView', itemLoaderPresets.itemList, {
-                'tagId': 2,
-                'page': 1,
-                'items': 3,
-                'sorting': itemSort
-              }) %}
+              	{% set carouItems = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView', itemLoaderPresets.tagList, {'tagIds': 2}).documents %}
             {% set slideitems = services.itemList.getItemList('tag_list', 2, null, 3) %}
             {% for slideitem in carouItems %}
                 <div class="carousel-item">
