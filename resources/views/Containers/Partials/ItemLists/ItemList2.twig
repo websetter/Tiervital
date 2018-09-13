@@ -13,22 +13,8 @@
     {% set itemList = services.itemList.getItemList( listType, tagIds ).documents %}
 {% endif %}
 
-<div class="row">
-    {% if listType == "last_seen" %}
-        <last-seen-item-list>
-            <div slot="heading">
-                {% if not isHome %}
-                    <hr>
-                {% endif %}
-
-                {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
-            </div>
-        </last-seen-item-list>
-    {% elseif itemList is not empty %}
-
-
-
-      {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
-        <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
-    {% endif %}
-</div>
+  
+{% if itemList is not empty %}
+  {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+    <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
+{% endif %}
