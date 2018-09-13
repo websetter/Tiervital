@@ -76,8 +76,8 @@
                   {# TAGS #}
                   <item-filter-tag-list></item-filter-tag-list>
               </div>
-              <div class="categoryOverview row">
               {% if category.level < 4 %}
+              <div class="categoryOverview row">
                 <ul>
                   {% set childCat = services.category.getChildren(category.id, lang) %}
                   {% for child in childCat %}
@@ -92,14 +92,12 @@
                     </a>
                   </li>
                   {% endfor %}
-              </ul>
-              {% endif %}
+              </ul>              
             </div>
-  {% if category.level == 2 or category.level == 3 %}
-</div>
-<div class="col-xs-12">
-  <h2 class="topArt">Top-Produkte aus dem Bereich {{  category.details[0].name }}</h2>
-{% endif %}
+        </div>
+        <div class="col-xs-12">
+          <h2 class="topArt">Top-Produkte aus dem Bereich {{  category.details[0].name }}</h2>
+        {% endif %}
 
                 <div id="twig-rendered-item-list" class="item-list-frame{% if ceresConfig.item.loadingAnimationType == "blur" %} blur-effect{% endif %}">
 
