@@ -44,7 +44,12 @@
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
             {% set slideitems = services.itemList.getItemList('tag_list', 2, null, 3) %}
-            {% include "Tiervital::Category.Item.Partials.CategoryListItem" with { 'item': slideitems, 'shippingCat': shippingCat, 'items': 3 } %}
+            {% for slideitem in slideitems %}
+                <li>
+                    {% include "Tiervital::Category.Item.Partials.CategoryListItem" with { 'item': slideitem, 'shippingCat': shippingCat, 'items': 3 } %}
+                </li>
+            {% endfor %}
+
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
               <span class="fa fa-angle-left" aria-hidden="true"></span>
               <span class="sr-only">Zurück</span>
