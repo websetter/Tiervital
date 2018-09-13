@@ -20,9 +20,9 @@
     {% set categoryKind = category.details[0].shortDescription %}
 
 {% for category1 in categoryBreadcrumbs %}
-
+{% if category1.level == 1 %}
     <p>{{ category1.details[0].nameUrl }}</p>
-
+{% endif %}
 {% endfor %}
 
 <div class="category-bg">
