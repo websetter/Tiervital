@@ -14,6 +14,6 @@
 
 
 {% if itemList is not empty %}
-  {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+<p>test</p> 
     <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
 {% endif %}
