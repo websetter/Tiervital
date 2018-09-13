@@ -19,14 +19,10 @@
 
     {% set categoryKind = category.details[0].shortDescription %}
 
-{% for category1 in categoryBreadcrumbs %}
-{% if category1.level == 1 %}
-    <p>{{ category1.details[0].nameUrl }}</p>
-{% endif %}
-{% endfor %}
+
 
 <div class="category-bg">
-  <img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg">
+  <img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}<p>{{ category1.details[0].nameUrl }}</p>{% endif %}{% endfor %}-1.jpg">
 </div>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}}">
@@ -138,7 +134,7 @@
         {% endif %}
     </div>
     <div class="category-bg-down">
-    	<img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-2.jpg">
+    	<img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}<p>{{ category1.details[0].nameUrl }}</p>{% endif %}{% endfor %}-2.jpg">
     </div>
 {% endblock %}
 
