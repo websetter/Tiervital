@@ -43,22 +43,8 @@
       <div class="row">
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
-            {% set homepageContainer9 = LayoutContainer.show("Ceres::Homepage.Container9") %}
-            {% if categoryList2 is not empty or homepageContainer9 | trim is not empty %}
-              <div class="carousel-inner">
-                {% if homepageContainer9 | trim is empty %}
-                    {% for item in categoryList2 %}
-                      <div class="carousel-items">
-                        {% include "Ceres::Category.Item.Partials.CategoryListItem" with {
-                          'item' : item
-                        } %}
-                      </div>
-                    {% endfor %}
-                {% else %}
-                  {{ homepageContainer9 }}
-                {% endif %}
-              </div>
-            {% endif %}
+            {% set items = services.itemList.getItemList('tag_list', 2, null, 3) %}
+            {% include category_template( category.id, lang, webstoreConfig.webstoreId ) with { items: items } %}
             <a class="carousel-control-prev" href="#Slider" role="button" data-slide="prev">
               <span class="fa fa-angle-left" aria-hidden="true"></span>
               <span class="sr-only">Zurück</span>
