@@ -44,7 +44,7 @@
         <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-            {% set carouItems = services.itemLoader.loadForTemplate('Ceres::ItemList.ItemListView',itemLoaderPresets.tagList,{'tagIds': 2, 'items':3 }) %}
+            {% set carouItems = services.itemLoader.loadForTemplate('Tiervital::ItemList.ItemListView',itemLoaderPresets.tagList,{'tagIds': 2, 'items':3 }) %}
             {% if carouItems is not empty %}
                     <item-list
                     :item-data="{{ carouItems | json_encode }}"
