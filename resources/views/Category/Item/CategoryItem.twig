@@ -21,7 +21,7 @@
 
 
 <div class="category-bg">
-	<img src="/images/gallery/template2016/kategorien/{{categoryKind}}-1.jpg" alt="{{categoryKind}}">
+	<img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
 </div>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}} {{categoryKind}}">
@@ -92,7 +92,7 @@
                     </a>
                   </li>
                   {% endfor %}
-              </ul>              
+              </ul>
             </div>
         </div>
         <div class="col-xs-12">
@@ -133,7 +133,7 @@
         {% endif %}
     </div>
     <div class="category-bg-down">
-    	<img alt="{{categoryKind}}" src="/images/gallery/template2016/kategorien/{{categoryKind}}-2.jpg">
+    	<img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
     </div>
 {% endblock %}
 
