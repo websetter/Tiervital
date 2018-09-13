@@ -1,4 +1,4 @@
-{{ component( "Tiervital::Containers.Components.ContainerItemList2" ) }}
+{{ component( "Tiervital::Containers.Components.ContainerItemList" ) }}
 {{ component( "Tiervital::ItemList.Components.CategoryItem" ) }}
 
 {% set listType = config("Tiervital.item.lists." ~ itemListNo ~ ".list_type") %}
@@ -15,5 +15,5 @@
 
 {% if itemList is not empty %}
   {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader2' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
-  {% include 'Tiervital::Containers.Components.ContainerItemList2' with { items: {{ itemList | json_encode }} } %}
+    <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
 {% endif %}
