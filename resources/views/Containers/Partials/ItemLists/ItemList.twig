@@ -1,9 +1,9 @@
 {{ component( "Tiervital::Containers.Components.ContainerItemList" ) }}
 {{ component( "Ceres::Containers.Components.LastSeenItemList" ) }}
 
-{% set listType = config("Ceres.item.lists." ~ itemListNo ~ ".list_type") %}
-{% set tagIds = config("Ceres.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
-{% set tagSorting = config("Ceres.item.lists.tag_sorting") %}
+{% set listType = config("Tiervital.item.lists." ~ itemListNo ~ ".list_type") %}
+{% set tagIds = config("Tiervital.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
+{% set tagSorting = config("Tiervital.item.lists.tag_sorting") %}
 {% set isHome = services.template.isHome() %}
 
 {% if listType == "cross_selling" %}
@@ -20,7 +20,7 @@
                     <hr>
                 {% endif %}
 
-                {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+                {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
             </div>
         </last-seen-item-list>
     {% elseif itemList is not empty %}
@@ -30,7 +30,7 @@
                 <hr>
             {% endif %}
 
-            {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
+            {% include 'Tiervital::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
         </div>
         <container-item-list :items="{{ itemList | json_encode }}"></container-item-list>
     {% endif %}
