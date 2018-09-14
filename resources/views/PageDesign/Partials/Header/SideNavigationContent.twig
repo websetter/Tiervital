@@ -2,6 +2,8 @@
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set categoryBreadcrumbs = services.category.getHierarchy() %}
-{% set catContent = services.category.getChildren(category.id, lang) %}
 
-{{ Tree.get_sidemenucontent(categoryBreadcrumbs, categories, "") }}
+{% set catContent = services.category.get( category.id, lang) %}
+{% set catContentChildren = services.category.getChildren(category.id, lang) %}
+
+{{ Tree.get_sidemenucontent(categoryBreadcrumbs, catContent, "") }}
