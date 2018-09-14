@@ -65,13 +65,7 @@ class TiervitalServiceProvider extends ServiceProvider
             return false;
         }, self::PRIORITY);
 
-        // Override contact
-        $dispatcher->listen('IO.Component.Import', function(ComponentContainer $container){
-           if( $container->getOriginComponentTemplate() == 'Ceres::Customer.Components.Contact.ContactForm')
-           {
-              $container->setNewComponentTemplate('Tiervital::Customer.Contact');
-           }
-         }, 0);
+
 
         // Override homepage
         if (in_array("homepage", $enabledOverrides) || in_array("all", $enabledOverrides))
@@ -83,6 +77,12 @@ class TiervitalServiceProvider extends ServiceProvider
                 return false;
             }, self::PRIORITY);
         }
+
+        //Override Contact
+        $dispatcher->listen('IO.tpl.contact', function (TemplateContainer $container) {
+          $container->setTemplate('Tiervital::Customer.Contact');
+          return false;
+        });
 
         // Override template for content categories
         if (in_array("category_content", $enabledOverrides) || in_array("all", $enabledOverrides))
