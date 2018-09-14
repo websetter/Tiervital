@@ -6,4 +6,4 @@
 {% set catContent = services.category.get( category.id, lang) %}
 {% set catContentChildren = services.category.getChildren(category.id, lang) %}
 
-{{ Tree.get_sidemenucontent(categoryBreadcrumbs, catContent, "") }}
+{{ Tree.get_sidemenucontent("content", categoryBreadcrumbs, categories, "") }}
