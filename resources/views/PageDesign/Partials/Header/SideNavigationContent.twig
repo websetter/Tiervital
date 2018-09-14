@@ -1,0 +1,7 @@
+{% import "Tiervital::Category.Macros.CategoryTree" as Tree %}
+
+{% set lang = services.sessionStorage.getLang() %}
+{% set categoryBreadcrumbs = services.category.getHierarchy() %}
+{% set children = services.category.getChildren(category.id, lang) %}
+
+{{ Tree.get_sidemenu(categoryBreadcrumbs, children, "") }}
