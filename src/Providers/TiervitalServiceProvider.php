@@ -252,10 +252,10 @@ class TiervitalServiceProvider extends ServiceProvider
             }, self::PRIORITY);
         }
 
-        //Override Contact
+
         $dispatcher->listen('IO.tpl.contact', function (TemplateContainer $container)
         {
-            $container->setTemplate('Tiervital::Customer.Contact');
+            $container->setTemplate('Tiervital::Customer.Components.Contact');
             return false;
         }, self::PRIORITY);
     }
