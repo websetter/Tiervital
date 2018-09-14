@@ -14,7 +14,7 @@
             <li><a href="{{ urls.contact }}">{{ trans('Ceres::Template.contact') }}</a></li>
             <li><a href="{{ urls.gtc }}">{{ trans('Ceres::Template.checkoutGtc') }}</a></li>
             <li><a href="{{ trans("Tiervital::Template.linkPayment") }}">{{ trans('Tiervital::Template.footerPayment') }}</a></li>
-            <li><a href="{{ trans("Tierivtal::Template.linkShipping") }}">{{ trans('Tiervital::Template.footerShipping') }}</a></li>
+            <li><a href="{{ trans("Tiervital::Template.linkShipping") }}">{{ trans('Tiervital::Template.footerShipping') }}</a></li>
             <li><a href="{{ urls.privacyPolicy }}">{{ trans('Tiervital::Template.footerPrivacy') }}</a></li>
             <li><a href="{{ urls.cancellationRights }}">{{ trans('Tiervital::Template.footerCancellation') }}</a></li>
             <li><a href="{{ trans("Tiervital::Template.linkBattery") }}">{{ trans('Tiervital::Template.footerBattery') }}</a></li>
@@ -42,6 +42,10 @@
       <div class="col-xs-12 col-sm-6 col-md-4 adress">
           <h4>{{ trans('Tiervital::Template.footerColumnTitle4') }}</h4>
           {% include "Ceres::Customer.Components.Contact.ContactCard" %}
+          <p class="m-y-0">
+      			<i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>
+      			<span class="d-inline-block"><a href="https://www.facebook.com/Tiervitalshop" title="zu FacebooK" target="_blank">Folgt uns auf Facebook</a></span>
+      		</p>
           </div>
     </div>
     <div class="row footerBottom">

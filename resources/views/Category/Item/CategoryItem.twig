@@ -32,8 +32,21 @@
                     <div class="sidebar-categories">
                         {{ include('Tiervital::PageDesign.Partials.Header.SideNavigation.twig') }}
                     </div>
-
                     {{ LayoutContainer.show("Ceres::CategoryItem.SideNavBarBottom") }}
+                    <div class="filterPanel hidden-sm hidden-xs">
+                    {% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets ) %}
+                    {% if overrideSearchFilters | trim is empty %}
+                        <item-filter-list :facet-data="{{ facets | json_encode }}"></item-filter-list>
+                    {% else %}
+                        {{ overrideSearchFilters }}
+                    {% endif %}
+                  </div>
+                  <div class="partner hidden-sm hidden-xs">
+                <p>Unsere Partner</p>
+                <a href="http://www.vet-concept.com/?refhex=5753506172746e657250726f6772616d6d&amp;subrefhex=3237393932332c2054696572766974616c73686f70&amp;wspartnerid=3&amp;wsdc=no" target="_blank">
+        					<img src="https://www.tiervitalshop.de/images/gallery/template2016/vet-concept.jpg" title="Partner - Vet-Concept">
+        				</a>
+             </div>
                 </div>
 
             {% endif %}
@@ -57,12 +70,6 @@
                                   <items-per-page
                                       template="#vue-items-per-page"
                                       :pagination-values="{{ searchOptions.itemsPerPage | json_encode }}"></items-per-page>
-                                  {% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets ) %}
-                                  {% if overrideSearchFilters | trim is empty %}
-                                      <item-filter-list :facet-data="{{ facets | json_encode }}"></item-filter-list>
-                                  {% else %}
-                                      {{ overrideSearchFilters }}
-                                  {% endif %}
                                   {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
                                       <pagination template="#vue-pagination"></pagination>
                                       <noscript>
@@ -74,8 +81,6 @@
                       </div>
                   </div>
 
-                  {# TAGS #}
-                  <item-filter-tag-list></item-filter-tag-list>
               </div>
               {% if category.level < 4 %}
               <div class="categoryOverview row">
@@ -134,7 +139,7 @@
         {% endif %}
     </div>
     <div class="category-bg-down">
-    	<img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}<p>{{ category1.details[0].nameUrl }}</p>{% endif %}{% endfor %}-2.jpg">
+    	<img src="/images/gallery/template2016/kategorien/{% for category2 in categoryBreadcrumbs %}{% if category2.level == 1 %}<p>{{ category2.details[0].nameUrl }}</p>{% endif %}{% endfor %}-2.jpg">
     </div>
 {% endblock %}
 
