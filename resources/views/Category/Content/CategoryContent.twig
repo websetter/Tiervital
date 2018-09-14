@@ -1,7 +1,7 @@
 {% extends getPartial('page-design') %}
 
 {% block PartialHead %}
-    <title>{{ category.details[0].metaTitle }} | HERMKO.de</title>
+    <title>{{ category.details[0].metaTitle }}</title>
 
     <meta name="description" content="{{ category.details[0].metaDescription }}">
     <meta name="keywords" content="{{ category.details[0].metaKeywords }}">
@@ -18,7 +18,7 @@
     {% endif %}
 
 
-<div class="beschreibung">
+<div class="container-max">
       {{ categoryDesc.details.first.description | raw }}
   </div>
 
