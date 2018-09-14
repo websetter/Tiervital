@@ -82,10 +82,10 @@
                   </div>
 
               </div>
-              {% if category.level < 4 %}
+              {% set childCat = services.category.getChildren(category.id, lang) %}
+              {% if category.level < 4 and childCat not empty %}
               <div class="categoryOverview row">
                 <ul>
-                  {% set childCat = services.category.getChildren(category.id, lang) %}
                   {% for child in childCat %}
                   <li class=" col-md-4 col-sm-6 col-xs-12">
                   <a href="{{category.details[0].nameUrl}}/{{ child.details[0].nameUrl }}">
