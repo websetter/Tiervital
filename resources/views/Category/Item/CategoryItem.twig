@@ -83,7 +83,7 @@
 
               </div>
               {% set childCat = services.category.getChildren(category.id, lang) %}
-              {% if category.level < 4 and childCat not empty %}
+              {% if category.level < 4 and childCat != "" %}
               <div class="categoryOverview row">
                 <ul>
                   {% for child in childCat %}
