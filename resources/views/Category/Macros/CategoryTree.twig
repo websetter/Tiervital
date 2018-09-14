@@ -108,12 +108,12 @@
 
 {% endmacro %}
 
-{% macro get_sidemenucontent(breadcrumbs, catContent, currentScopeUrl) %}
+{% macro get_sidemenucontent(breadcrumbs, catContentChildren, currentScopeUrl) %}
 
     {% import _self as sidemenu %}
     {% set urlNow = currentScopeUrl %}
 
-    {% for category in catContent %}
+    {% for category in catContentChildren %}
 
         {% set urlNow = currentScopeUrl ~ "/" ~ category.details[0].nameUrl %}
 
