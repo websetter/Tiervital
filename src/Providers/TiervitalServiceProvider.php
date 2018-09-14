@@ -253,11 +253,10 @@ class TiervitalServiceProvider extends ServiceProvider
         }
 
         //Override Contact
-        $eventDispatcher->listen('IO.Component.Import', function(ComponentContainer $container){
-           if( $container->getOriginComponentTemplate() == 'Ceres::Customer.Components.Contact.ContactForm')
-           {
-              $container->setNewComponentTemplate('CeresSportbiz::Customer.Contact');
-           }
-         }, 0);
+        $dispatcher->listen('IO.tpl.contact', function (TemplateContainer $container)
+        {
+            $container->setTemplate('Tiervital::Customer.Contact');
+            return false;
+        }, self::PRIORITY);
     }
 }
