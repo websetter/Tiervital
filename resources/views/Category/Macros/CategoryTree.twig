@@ -108,14 +108,14 @@
 
 {% endmacro %}
 
-{% macro get_sidemenucontent(breadcrumbs, catContent, currentScopeUrl) %}
+{% macro get_sidemenucontent(breadcrumbs, categories, currentScopeUrl) %}
 
     {% import _self as sidemenu %}
     {% set urlNow = currentScopeUrl %}
 
-    {% for category in catContent %}
+    {% for category in categories %}
 
-        {% set urlNow = currentScopeUrl ~ "/" ~ CurrentCategory.details[0].nameUrl %}
+        {% set urlNow = currentScopeUrl ~ "/" ~ category.details[0].nameUrl %}
 
 
         {% if category.details[0]%}
@@ -123,7 +123,6 @@
                 <li class="nav-item{% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs" data-category-id="{{ category.id }}">
                     <a href="{{ urlNow }}{{ urls.trailingSlashSuffix }}" class="nav-link" v-render-category="{ id: {{ category.id }}, type: '{{ category.type }}', alwaysOpen: true, scrollToTop: 600 }">{{ category.details[0].name }}{% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}</a>
                     {% if category.children is not empty %}
-                    <p>test</p>
                         {{ sidemenu.get_sidemenucontent(breadcrumbs, category.children, urlNow) }}
                     {% endif %}
                 </li>
