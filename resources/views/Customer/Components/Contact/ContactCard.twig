@@ -19,7 +19,7 @@
 <div class="contact-card">
     {% if "name" in showData or "ceo" in showData or "street" in showData or "zip" in showData or "city" in showData or "country" in showData %}
         <p class="contact-address">
-            <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-home" aria-hidden="true"></i>
             {% if "name" in showData or showData == 'all' %}
                 <span class="d-inline-block">{{ name }}</span><br>
             {% endif %}

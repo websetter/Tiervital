@@ -22,7 +22,7 @@
 
 
 <div class="category-bg">
-  <img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}<p>{{ category1.details[0].nameUrl }}</p>{% endif %}{% endfor %}-1.jpg">
+  <img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}{{ category1.details[0].nameUrl }}{% endif %}{% endfor %}-1.jpg">
 </div>
 
     <div class="categoriegrid page-content container-max fromCategory cat-{{category.id}}">
@@ -139,7 +139,7 @@
         {% endif %}
     </div>
     <div class="category-bg-down">
-    	<img src="/images/gallery/template2016/kategorien/{% for category2 in categoryBreadcrumbs %}{% if category2.level == 1 %}<p>{{ category2.details[0].nameUrl }}</p>{% endif %}{% endfor %}-2.jpg">
+    	<img src="/images/gallery/template2016/kategorien/{% for category2 in categoryBreadcrumbs %}{% if category2.level == 1 %}{{ category2.details[0].nameUrl }}{% endif %}{% endfor %}-2.jpg">
     </div>
 {% endblock %}
 
