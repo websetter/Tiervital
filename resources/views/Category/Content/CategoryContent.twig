@@ -20,7 +20,7 @@
 
 <div class="container-max">
   {% set children = services.category.getChildren(category.id, lang) %}
-  {% for childCategory in children if childCategory.type === "content" %}
+  {% for childCategory in children if childCategory.type is same as "content" %}
      <h2>{{ childCategory.details[0].name }}</h2>
      {% include category_template( childCategory.id, lang, webstoreConfig.webstoreId ) ignore missing %}
   {% endfor %}
