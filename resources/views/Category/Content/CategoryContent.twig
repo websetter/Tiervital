@@ -23,6 +23,9 @@
       {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
   </div>
       {{ categoryDesc.details.first.description | raw }}
+      <div class="block-categories-content">
+          {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
+      </div>
   </div>
 
 {% endblock %}
