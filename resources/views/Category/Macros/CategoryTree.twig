@@ -149,8 +149,11 @@
       {% endif %}
       {% if category.details[0]%}
         <div class="col-xs-12 col-sm-6 col-md-4 {% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs" data-category-id="{{ category.id }}">
-            <a href="/tiervitalshop/content/tierarzt-ratgeber{{ urlParent }}{{ urlNow }}{{ urls.trailingSlashSuffix }}">{{ category.details[0].name }}
+          <div class="box">
+            <a href="/tiervitalshop/content/tierarzt-ratgeber{{ urlParent }}{{ urlNow }}{{ urls.trailingSlashSuffix }}">
+            <h4>{{ category.details[0].name }}</h4>
             <p>{{ category.details[0].shortDescription }}</p></a>
+          </div>
         </div>
       {% endif %}
 
