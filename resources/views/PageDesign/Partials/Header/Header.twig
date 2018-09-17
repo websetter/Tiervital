@@ -30,17 +30,17 @@
                   <li><a href="{{ trans("Tiervital::Template.linkTierarztRatgeber") }}">
                     <img class="hidden-small" src="https://www.tiervitalshop.de/images/gallery/template2016/buch-green-sm.gif" alt="Buch">
                     <img class="hidden-big" src="https://www.tiervitalshop.de/images/gallery/template2016/buch-weiss-sm.png" alt="Buch">
-                    {{ trans("Tiervital::Template.tierarztRatgeber") }}</a></li>
+                    <span class="hiiden-small">{{ trans("Tiervital::Template.tierarztRatgeber") }}</span></a></li>
 
                     <li class="list-inline-item control-user">
                         <user-login-handler>
                             <a data-toggle="modal">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hidden-xs-down">{{ trans("Tiervital::Template.meinShop") }}</span>
+                                <span class="hidden-small">{{ trans("Tiervital::Template.meinShop") }}</span>
                             </a>
-                            <span class="pipe"></span>
-                            <a data-toggle="modal">
-                                <span class="hidden-xs-down">{{ trans("Ceres::Template.loginRegister") }}</span>
+                            <span class="pipe hidden-small"></span>
+                            <a data-toggle="modal" class="hidden-small">
+                                <span{{ trans("Ceres::Template.loginRegister") }}</span>
                             </a>
                         </user-login-handler>
                     </li>
