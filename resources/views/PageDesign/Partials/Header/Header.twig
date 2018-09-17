@@ -27,7 +27,10 @@
                 </div>
 
                 <ul id="headerLinks" class="controls-list list-inline">
-                  <li><a href="{{ trans("Tiervital::Template.linkTierarztRatgeber") }}"><img src="https://www.tiervitalshop.de/images/gallery/template2016/buch-green-sm.gif" alt="Buch">{{ trans("Tiervital::Template.tierarztRatgeber") }}</a></li>
+                  <li><a href="{{ trans("Tiervital::Template.linkTierarztRatgeber") }}">
+                    <img class="hidden-small" src="https://www.tiervitalshop.de/images/gallery/template2016/buch-green-sm.gif" alt="Buch">
+                    <img class="hidden-big" src="https://www.tiervitalshop.de/images/gallery/template2016/buch-weiss-sm.png" alt="Buch">
+                    {{ trans("Tiervital::Template.tierarztRatgeber") }}</a></li>
 
                     <li class="list-inline-item control-user">
                         <user-login-handler>
@@ -40,6 +43,23 @@
                                 <span class="hidden-xs-down">{{ trans("Ceres::Template.loginRegister") }}</span>
                             </a>
                         </user-login-handler>
+                    </li>
+                    <li class="basketMobile">
+                        <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
+                            {% if config("Ceres.header.basket_values") != "sum" %}
+                                <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
+                            {% endif %}
+
+                            <i v-waiting-animation="$store.state.basket.isBasketLoading" waiting-class="fa fa-refresh fa-spin" class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            {% if config("Ceres.header.basket_values") != "quantity" %}
+                                <span class="badge" v-if="!$store.state.basket.showNetPrices" v-basket-item-sum="$store.state.basket.data.itemSum">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
+                                <span class="badge" v-else v-cloak v-basket-item-sum="$store.state.basket.data.itemSumNet">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
+                            {% endif %}
+                        </a>
+
+                        {% if config("Ceres.basket.preview_type") != "right" %}
+                            <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ showNetPrices | json_encode }}"></basket-preview>
+                        {% endif %}
                     </li>
                   </ul>
                   <div id="search-basket">
