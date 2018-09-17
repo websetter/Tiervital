@@ -17,13 +17,16 @@
       {% set categoryDesc = services.category.get( category.id, lang) %}
     {% endif %}
 
+    <p>{{categoryDesc}}</p>
+    <p>{{categoryDesc.parentCategory}}</p>
+
 
 <div class="container-max">
-  <div class="sidebar-categories-content">
+  <div class="sidebar-categories-content col-xs-3 hidden-md-down">
       {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
   </div>
       {{ categoryDesc.details.first.description | raw }}
-      <div class="block-categories-content">
+      <div class="block-categories-content col-xs-12 col-md-9">
           {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
       </div>
   </div>
