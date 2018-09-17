@@ -12,9 +12,9 @@
 
     {% set legalDisclosure = services.legalInformation.getLegalDisclosure() %}
 
-    <div class="container-max page-content">
+    <div class="container-max page-content isContent">
         <div class="row">
-            <div class="col-xs-12">  
+            <div class="col-xs-12">
                 {% if legalDisclosure.htmlText %}
                     {{ legalDisclosure.htmlText | raw }}
                 {% else %}
