@@ -30,7 +30,7 @@
             {{ categoryDesc.details.first.description | raw }}
             {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
         </div>
-    {% else %}
+    {% endif %}
     {{ categoryDesc.details.first.description | raw }}
   </div>
 
