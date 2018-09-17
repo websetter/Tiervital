@@ -141,8 +141,8 @@
     {% for category in catContentChildren %}
 
         {% set urlNow = currentScopeUrl ~ "/" ~ category.details[0].nameUrl %}
-      <p>{{currentScopeUrl]]</p>
-      <p>{{ catContent.details[0].nameUrl }}
+      <p>{{currentScopeUrl}}</p>
+      <p>{{ catContent.details[0].nameUrl }}</p>
 
         {% if category.details[0]%}
                 <div class="col-xs-12 col-sm-6 col-md-4 {% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs" data-category-id="{{ category.id }}">
