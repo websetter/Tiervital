@@ -5,6 +5,8 @@
 {% for content in container("Ceres::Homepage")if content.plugin != "Plenty" %}
   {% set overrideHomepageContainer = overrideHomepageContainer ~ content.result %}
 {% endfor %}
+
+
 {% if overrideHomepageContainer | trim is empty %}
 
   {% set lang = services.sessionStorage.getLang() %}
@@ -88,18 +90,19 @@
       {{ introText.details.first.description | raw }}
     </div>
   </div>
-  <div id="topProdukte">
-  <div class="container-max">
-    <div class="row">
-      <div class="col-xs-12 col-lg-10">
-      {% set homepageContainer6 = LayoutContainer.show("Ceres::Homepage.Container6") %}
-          {{ homepageContainer6 }}
-        </div>
 
-      {{ LayoutContainer.show("Ceres::Homepage.Container10") }}
-    </div>
+  <div id="topProdukte">
+    <div class="container-max">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10">
+          {% set homepageContainer6 = LayoutContainer.show("Ceres::Homepage.Container6") %}
+            {{ homepageContainer6 }}
+          </div>
+          {{ LayoutContainer.show("Ceres::Homepage.Container10") }}
+      </div>
     </div>
   </div>
+
   <div class="container-max">
     <div class="row infoBoxen">
       <div class=" col-lg-4 col-sm-4 col-xs-12">
@@ -130,7 +133,6 @@
       </div>
     </div>
   </div>
-</div>
 {% else %}
 {{ overrideHomepageContainer | raw }}
 {% endif %}
