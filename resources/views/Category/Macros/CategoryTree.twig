@@ -140,7 +140,7 @@
 
     {% for category in catContentChildren %}
 
-        {% set urlNow = currentScopeUrl ~ "/" ~ category.details[0].nameUrl %}
+        {% set urlNow = currentScopeUrl ~ "/"~ category.parentCategoryId.details[0].nameUrl ~ "/" ~ category.details[0].nameUrl %}
 
 
         {% if category.details[0]%}
