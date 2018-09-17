@@ -2,42 +2,35 @@
 
 {% block PartialHead %}
     <title>{{ category.details[0].metaTitle }}</title>
-
     <meta name="description" content="{{ category.details[0].metaDescription }}">
     <meta name="keywords" content="{{ category.details[0].metaKeywords }}">
-
     <meta name="robots" content="{{ metaRobots }}">
 {% endblock %}
 
 {% block PageBody %}
 
     {% include category_template( category.id, lang, webstoreConfig.webstoreId ) ignore missing %}
-
     {% if categoryDesc is not defined %}
       {% set categoryDesc = services.category.get( category.id, lang) %}
     {% endif %}
 
-    <p>{{categoryDesc.id}}</p>
-    <p>{{categoryDesc.parentCategoryId}}</p>
-
-
 <div class="container-max content">
     {% if categoryDesc.id == "634" or categoryDesc.parentCategoryId == "634" %}
-    <div class="row">
-      <div class="sidebar-categories-content col-xs-3 hidden-md-down">
-          {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
-      </div>
-      <div class="block-categories-content col-xs-12 col-md-9">
-          {{ categoryDesc.details.first.description | raw }}
-          <div class="row">
-            {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
+      <div class="row">
+        <div class="sidebar-categories-content col-xs-3 hidden-md-down">
+            {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
+        </div>
+        <div class="block-categories-content col-xs-12 col-md-9">
+            {{ categoryDesc.details.first.description | raw }}
+            <div class="row">
+              {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
+          </div>
         </div>
       </div>
-    </div>
     {% else %}
       {{ categoryDesc.details.first.description | raw }}
     {% endif %}
-  </div>
+</div>
 
 
 {% endblock %}
