@@ -23,13 +23,17 @@
 
 <div class="container-max content">
     {% if categoryDesc.id == "634" or categoryDesc.parentCategoryId == "634" %}
+    <div class="row">
       <div class="sidebar-categories-content col-xs-3 hidden-md-down">
           {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
       </div>
       <div class="block-categories-content col-xs-12 col-md-9">
           {{ categoryDesc.details.first.description | raw }}
-          {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
+          <div class="row">
+            {{ include('Tiervital::PageDesign.Partials.Header.BlockNavigationContent.twig') }}
+        </div>
       </div>
+    </div>
     {% else %}
       {{ categoryDesc.details.first.description | raw }}
     {% endif %}
