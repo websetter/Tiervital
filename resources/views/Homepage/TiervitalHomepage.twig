@@ -74,12 +74,48 @@
     {{ component( "Ceres::ItemList.Components.CategoryImageCarousel") }}
     {{ component( "Ceres::Basket.Components.AddToBasket" ) }}
 
-    <div class="home container-max">
+    <div id="Slider">
+      <div class="container-max">
         <div class="row">
-            <div class="homepage-title m-b-1">
-                <h1>{{ trans("Ceres::Template.headerCompanyName") }}</h1>
+          <div class="col-lg-8 col-sm-8 col-xs-12 neuheiten">
+            <div id="headlineNeuheiten"><span class="orange">Unsere</span><span class="schwarz"> BestSeller</span></div>
+            <div id="newArt" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                {% set homepageContainer9 = LayoutContainer.show("Ceres::Homepage.Container9") %}
+                    {{ homepageContainer9 }}
+
             </div>
+              <a class="carousel-control-prev" href="#newArt" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Zurück</span>
+              </a>
+              <a class="carousel-control-next" href="#newArt" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Weiter</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-xs-12 spalteRechts">
+            <div class="produktHits">
+              <h2 class="zweiFarbig">
+                <span class="orange">Sonder</span>angebote</h2>
+              <p>Unsere besten<br>Schnäppchen auf einen Blick</p>
+              <a class="btn btn-orange margin-top-2" href="https://www.tiervitalshop.de/sonderangebote/">Jetzt zugreifen!</a>
+            </div>
+            <div class="tierpunkt">
+              <h2 class="zweiFarbig">
+                <span class="orange">Tier-</span>punkt</h2>
+              <ul>
+                <li>Alles „rund ums Haustier“</li>
+                <li>Buchtipp jeden Monat</li>
+              </ul>
+              <a class="btn btn-orange" target="_blank" href="http://www.tier-punkt.de/">Jetzt stöbern</a>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="container-max">      
 
         <div class="row">
             <div class="cmp cmp-hero">
