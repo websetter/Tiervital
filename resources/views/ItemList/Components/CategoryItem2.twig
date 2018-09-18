@@ -15,12 +15,12 @@
 
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid fromItemList">
-    <p>${ itemData | json_encode }</p>
-    <p>${ itemData.images.all.urlMiddle }</p>
+
+    <p>${ itemData.images.all.urlPreview }</p>
         <div class="thumb-inner">
             <div class="thumb-background"></div>
             <div class="thumb-image">
-              <a :href="itemData | itemURL"><img :scr="itemData | imgURL"></a>
+              <a :href="itemData | itemURL"><img :scr="itemData | urlPreview"></a>
             </div>
 
             <!-- ITEM DETAILS -->
