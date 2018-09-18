@@ -16,14 +16,11 @@
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid fromItemList">
 
-    <p>${ itemData.images.all.urlPreview }</p>
         <div class="thumb-inner">
             <div class="thumb-background"></div>
             <div class="thumb-image">
-              <a :href="itemData | itemURL">
-              <div v-for="(imageUrl, index) in imageUrls">
-                  <img :src="imageUrl.url" :alt="getAltText(imageUrl)" :title="titleText">
-              </div>
+              <a :href="itemData | itemURL">              
+                  <img :src="itemData.images | urlPreview"  :title="titleText">
               </a>
             </div>
 
