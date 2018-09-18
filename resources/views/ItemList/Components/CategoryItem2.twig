@@ -19,8 +19,12 @@
         <div class="thumb-inner">
             <div class="thumb-background"></div>
             <div class="thumb-image">
-              <a :href="itemData | itemURL">${ itemData.images.all.urlPreview }</a>
-              
+              <a :href="itemData | itemURL"></a>
+              <span>${ item.images.all.urlPreview }</span>
+                <span>${ item.images.urlPreview }</span>
+                  <span>${ item.images.all }</span>
+                    <span>${ itemData.images.all.urlPreview }</span>
+
             </div>
 
             <!-- ITEM DETAILS -->
