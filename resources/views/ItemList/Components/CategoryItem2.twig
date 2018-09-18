@@ -20,7 +20,11 @@
         <div class="thumb-inner">
             <div class="thumb-background"></div>
             <div class="thumb-image">
-              <a :href="itemData | itemURL"><img :scr="itemData | urlPreview"></a>
+              <a :href="itemData | itemURL">
+              <div v-for="(imageUrl, index) in imageUrls">
+                  <img :src="imageUrl.url" :alt="getAltText(imageUrl)" :title="titleText">
+              </div>
+              </a>
             </div>
 
             <!-- ITEM DETAILS -->
