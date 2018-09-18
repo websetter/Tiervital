@@ -95,7 +95,7 @@
 
         {% if category.details[0]%}
             <ul>
-                <li class="nav-item{% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs">
+                <li class="nav-item cat-{{category.id}} {% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs">
                     <a href="{{ urlNow }}{{ urls.trailingSlashSuffix }}" class="nav-link">{{ category.details[0].name }} {% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}</a>
                     {% if category.children is not empty %}
                         {{ sidemenu.get_sidemenu(breadcrumbs, category.children, urlNow) }}
