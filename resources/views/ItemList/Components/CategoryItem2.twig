@@ -7,7 +7,7 @@
 
 {% if enableCarousel is not defined %}
     {% if config("Ceres.item.enable_image_carousel") == "true" %}
-        {% set enableCarousel = "true" %}
+        {% set enableCarousel = "false" %}
     {% else %}
         {% set enableCarousel = "false" %}
     {% endif %}
