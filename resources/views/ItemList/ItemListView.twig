@@ -26,6 +26,9 @@
                             <items-per-page
                                 template="#vue-items-per-page"
                                 :pagination-values="{{ searchOptions.itemsPerPage | json_encode }}"></items-per-page>
+                                {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
+                                  <pagination template="#vue-pagination"></pagination>
+                                {% endif %}
                             {% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets) %}
                             {% if overrideSearchFilters | trim is empty %}
                                 <item-filter-list :facet-data="{{ facets | json_encode }}"></item-filter-list>
@@ -40,17 +43,9 @@
             <item-filter-tag-list></item-filter-tag-list>
         </div>
 
-        {% if ceresConfig.pagination.position in ['top', 'top_bottom'] %}
-            <div class="list-controls m-b-3 row">
-                <div class="col-xs-12">
-                    <pagination template="#vue-pagination"></pagination>
-                </div>
-            </div>
-        {% endif %}
 
         <div class="row">
             <div class="col-xs-12">
-
                 <div id="vue-rendered-item-list" class="item-list-frame">
                     <item-list
                         :item-data="{{ itemList | json_encode }}"
