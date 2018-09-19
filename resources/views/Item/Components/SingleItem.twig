@@ -8,7 +8,7 @@
   <div class="category-bg">
   	<img src="/images/gallery/template2016/kategorien/{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}-1.jpg" alt="{% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
   </div>
-    <div class="single container-max page-content {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
+    <div class="cat-{{category.id}} single container-max page-content {% for category in categoryBreadcrumbs[:categoryBreadcrumbs | length - 1] if not break %}{% if category.level == 1 %}{{ category.details[0].nameUrl }}{% else %}{% set break = true %}{% endif %}{% endfor %}">
 
       <div class="row">
         {% if ceresConfig.header.showNavBars == "side" or ceresConfig.header.showNavBars == "both" %}
@@ -68,7 +68,7 @@
                   {% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}
                   {% endif %}
                   {{ trans("Ceres::Template.singleItemExclusive") }}
-                  <a href="{{ trans("Tiervital::Template.linkShipping") }}" target="_blank" title="{{ trans("Ceres::Template.singleitemshippingcosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+                  <a href="{{ trans("Tiervital::Template.linkShipping") }}" target="_blank" title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
                 </span>
               </div>
               <div id="prices-right">
