@@ -95,8 +95,8 @@
 
         {% if category.details[0]%}
             <ul>
-                <li class="nav-item cat-{{category.id}} {% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs">
-                    <a href="{{ urlNow }}{{ urls.trailingSlashSuffix }}" class="nav-link">{{ category.details[0].name }} {% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}</a>
+                <li class="nav-item cat-{{category.id}} {% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}{% if category.children is not empty %} parent{% endif %}" v-update-sidenav-selection="$store.getters.breadcrumbs">
+                    <a href="{{ urlNow }}{{ urls.trailingSlashSuffix }}" class="nav-link">{{ category.details[0].name }} </a>{% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}
                     {% if category.children is not empty %}
                         {{ sidemenu.get_sidemenu(breadcrumbs, category.children, urlNow) }}
                     {% endif %}
@@ -123,7 +123,7 @@
 
         {% if category.details[0]%}
               <li class="{% for breadcrumb in breadcrumbs %}{% if category.id == breadcrumb.id %} active{% endif %}{% endfor %}" v-update-sidenav-selection="$store.getters.breadcrumbs" data-category-id="{{ category.id }}">
-                  <a href="/tiervitalshop/content/tierarzt-ratgeber{{ urlParent }}{{ urlNow }}{{ urls.trailingSlashSuffix }}">{{ category.details[0].name }}{% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}</a>
+                  <a href="/tiervitalshop/content/tierarzt-ratgeber{{ urlParent }}{{ urlNow }}{{ urls.trailingSlashSuffix }}">{{ category.details[0].name }}</a>{% if category.children is not empty %}<i class="fa fa-angle-right"></i>{% endif %}
                   {% if category.children is not empty %}
                       {{ sidemenu.get_sidemenucontent(breadcrumbs, category.children, urlNow) }}
                   {% endif %}
