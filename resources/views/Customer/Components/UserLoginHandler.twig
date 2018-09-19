@@ -8,8 +8,8 @@
             </a>
             <div class="account-menu dropdown-menu dropdown-menu-right small hidden-small">
               <div class="list-group" aria-labelledby="accountMenuList" >
-                <a href="/my-account" class="list-group-item small"><i class="fa fa-user"></i> {{ trans("Ceres::Template.myAccount") }}</a>
-                <a href="#" class="list-group-item small" v-logout><i class="fa fa-sign-out"></i> {{ trans("Ceres::Template.loginLogout") }}</a>
+                <a href="/my-account" class="list-group-item small"><i class="fa fa-user"></i><span class="hidden-small"> {{ trans("Ceres::Template.myAccount") }}</span></a>
+                <a href="#" class="list-group-item small" v-logout><i class="fa fa-sign-out"></i> <span class="hidden-small">{{ trans("Ceres::Template.loginLogout") }}</span></a>
               </div>
             </div>
         </div>
