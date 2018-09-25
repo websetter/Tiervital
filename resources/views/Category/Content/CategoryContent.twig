@@ -19,6 +19,12 @@
       <div class="row">
         <div class="sidebar-categories-content col-xs-3 hidden-md-down">
             {{ include('Tiervital::PageDesign.Partials.Header.SideNavigationContent.twig') }}
+            <div class="partner hidden-sm hidden-xs">
+              <p>Unsere Partner</p>
+              <a href="http://www.vet-concept.com/?refhex=5753506172746e657250726f6772616d6d&amp;subrefhex=3237393932332c2054696572766974616c73686f70&amp;wspartnerid=3&amp;wsdc=no" target="_blank">
+                <img src="https://www.tiervitalshop.de/images/gallery/template2016/vet-concept.jpg" title="Partner - Vet-Concept">
+              </a>
+           </div>
         </div>
         <div class="block-categories-content col-xs-12 col-sm-12 col-md-9">
             {{ categoryDesc.details.first.description | raw }}
