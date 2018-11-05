@@ -3,10 +3,11 @@
         <div v-for="(attribute, attributeId) in attributes">
             <div class="input-unit">
                 <select class="custom-select text-gray-dark" v-model="selectedAttributes[attributeId]" @change="onSelectionChange(selectedAttributes[attributeId])">
-                        <option :value="null">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
+                        <option name="please" value="choose">{{ trans("Ceres::Template.singleItemPleaseSelect") }}</option>
                         <option
                             v-for="(attributeValue, attributeValueId) in attribute.values"
                             :value="attributeValueId"
+                            :name="attributeValueId"
                             :disabled="!isEnabled(attributeId, attributeValueId)">
                             ${ attributeValue }
                         </option>
