@@ -19,8 +19,6 @@
 
     {% set categoryKind = category.details[0].shortDescription %}
 
-
-
 <div class="category-bg">
   <img src="/images/gallery/template2016/kategorien/{% for category1 in categoryBreadcrumbs %}{% if category1.level == 1 %}{{ category1.details[0].nameUrl }}{% endif %}{% endfor %}-1.jpg">
 </div>
