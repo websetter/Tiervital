@@ -39,5 +39,13 @@
             "name"          :"Third item list",
             "description"   :"Display a configurable list of items in your online store"
         }
+    ],
+    "containers"        :
+    [
+        {
+            "key"           : "CategoryItem.ContainerBadge",
+            "name"          : "CategoryItem: Container Badge",
+            "description"   : "Add additional content on the Left Side."
+        }
     ]
 }
