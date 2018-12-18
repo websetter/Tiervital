@@ -46,6 +46,11 @@
             "key"           : "CategoryItem.ContainerBadge",
             "name"          : "CategoryItem: Container Badge",
             "description"   : "Add additional content on the Left Side."
+        },
+        {
+            "key"           : "SingleItem.TrustedReview",
+            "name"          : "SingleItem: Container for Trusted Reviews",
+            "description"   : "Container for Trusted Reviews"."
         }
     ]
 }
