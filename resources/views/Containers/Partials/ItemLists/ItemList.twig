@@ -1,9 +1,9 @@
 {{ component( "Tiervital::Containers.Components.ContainerItemList" ) }}
 {{ component( "Tiervital::ItemList.Components.CategoryItem" ) }}
 
-{% set listType = config("Tiervital.item.lists." ~ itemListNo ~ ".list_type") %}
-{% set tagIds = config("Tiervital.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
-{% set tagSorting = config("Tiervital.item.lists.tag_sorting") %}
+{% set listType = config("Ceres.item.lists." ~ itemListNo ~ ".list_type") %}
+{% set tagIds = config("Ceres.item.lists." ~ itemListNo ~ ".tag_ids") | split(",") %}
+{% set tagSorting = config("Ceres.item.lists.tag_sorting") %}
 {% set isHome = services.template.isHome() %}
 
 {% if listType == "cross_selling" %}
