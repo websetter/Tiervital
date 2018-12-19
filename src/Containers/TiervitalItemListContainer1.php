@@ -16,7 +16,7 @@ class TiervitalItemListContainer1
         /** @var CeresConfig $ceresConfig */
         $ceresConfig = pluginApp(CeresConfig::class);
 
-        $listType = $ceresConfig->itemLists->list3Type;
+        $listType = $ceresConfig->itemLists->list1Type;
 
         if($listType == 'tag_list')
         {
@@ -24,7 +24,7 @@ class TiervitalItemListContainer1
             $itemSearchService = pluginApp( ItemSearchService::class );
 
             $itemSearchOptions = [
-                'tagIds' => explode(',', $ceresConfig->itemLists->list3TagIds),
+                'tagIds' => explode(',', $ceresConfig->itemLists->list1TagIds),
                 'sorting' => $ceresConfig->itemLists->tagSorting
             ];
 
