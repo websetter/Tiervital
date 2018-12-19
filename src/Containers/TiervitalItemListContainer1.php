@@ -38,6 +38,6 @@ class TiervitalItemListContainer1
             }
         }
 
-        return $twig->render('Tiervital::Containers.ItemLists.ItemList3', ["item" => $arg[0], "itemList" => $tagList]);
+        return $twig->render('Tiervital::Containers.ItemLists.ItemList1', ["item" => $arg[0], "itemList" => $tagList]);
     }
 }
